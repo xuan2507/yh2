@@ -47,12 +47,21 @@ body {
   }
 }
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-fade-in {
   animation: fadeIn 1.2s ease-out forwards;
 }
 
 .animate-fade-in-up {
   animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
 }
 
 .delay-100 { animation-delay: 0.1s; opacity: 0; }

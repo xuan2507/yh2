@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -57,9 +58,9 @@ export default function CartDrawer() {
               <span className="text-stone text-sm">Subtotal</span>
               <span className="font-serif text-xl text-ink">${total.toLocaleString()}</span>
             </div>
-            <button className="w-full py-4 bg-ink hover:bg-stone text-paper text-[12px] tracking-[0.12em] uppercase transition-all">
+            <Link to="/payment" onClick={() => setIsOpen(false)} className="block w-full py-4 bg-ink hover:bg-stone text-paper text-[12px] tracking-[0.12em] uppercase transition-all text-center">
               Checkout
-            </button>
+            </Link>
             <button onClick={clearCart} className="w-full py-2 text-stone hover:text-ink text-[11px] transition-colors">
               Clear Cart
             </button>

@@ -1,56 +1,105 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowDown } from 'lucide-react';
+import { ArrowRight, ArrowDown, ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
+  const platforms = [
+    {
+      num: '/01',
+      title: 'AI Design Studio',
+      desc: 'Upload a photo of your space. Set your preferences. Receive multiple professionally designed concepts with 3D renders, layouts, and a complete shopping list — in minutes, not weeks.',
+      link: '/design-studio',
+      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=1000&fit=crop',
+    },
+    {
+      num: '/02',
+      title: 'Visualization',
+      desc: 'Photorealistic exterior and interior renders, 360° panoramas, and cinematic virtual walkthroughs for architects, developers, and real estate professionals.',
+      link: '/visualization',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop',
+    },
+    {
+      num: '/03',
+      title: 'Marketplace',
+      desc: 'Every item in your AI-generated design is clickable and shoppable. Partnered with the world\'s finest furniture brands. Your complete room, delivered to your door.',
+      link: '/marketplace',
+      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=1000&fit=crop',
+    },
+  ];
+
+  const galleryImages = [
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600210491898-03076e8ec95c?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&h=600&fit=crop',
+  ];
+
+  const revenueStreams = [
+    { title: 'Marketplace Commission', desc: 'Commission on every product sold through the platform.' },
+    { title: 'Featured Placement', desc: 'Priority exposure fees for brands in AI-generated designs.' },
+    { title: 'Retailer Subscriptions', desc: 'Monthly plans for retailers to list and manage catalogues.' },
+    { title: 'Affiliate Commissions', desc: 'Revenue from home improvement and renovation partners.' },
+    { title: 'Design Consultation', desc: 'Premium fees for personalized interior design services.' },
+    { title: 'Visualization Projects', desc: 'Project-based fees for architectural visualization work.' },
+  ];
+
   return (
     <div>
-      {/* Hero */}
-      <section className="min-h-screen relative flex">
-        <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 md:px-10 pt-28 pb-20">
-          <div className="animate-fade-in-up">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-stone mb-10">AI-Powered Design Platform</p>
-            
-            <h1 className="font-serif text-ink leading-[1.05] mb-10">
-              <span className="block text-[clamp(2.5rem,6vw,5rem)]">Houses that</span>
-              <span className="block text-[clamp(2.5rem,6vw,5rem)] mt-1">invite you to</span>
-              <em className="block text-[clamp(2.5rem,6vw,5rem)] text-stone mt-1">pause time</em>
-            </h1>
-            
-            <p className="text-stone text-sm leading-[1.8] max-w-sm mb-12">
-              Where artificial intelligence meets architectural artistry. Design your space, visualize it in photorealistic 3D, and shop every item — all from one platform.
-            </p>
-            
-            <div className="flex items-center gap-8">
-              <Link to="/design-studio" className="group flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase text-ink hover:text-stone transition-colors">
-                Start Designing
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-              </Link>
-              <Link to="/marketplace" className="text-[11px] tracking-[0.12em] uppercase text-stone hover:text-ink transition-colors">
-                Explore
-              </Link>
-            </div>
-          </div>
+      {/* Full-screen Hero */}
+      <section className="min-h-screen relative flex items-end">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop" 
+            alt="Interior" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-ink/40" />
         </div>
         
-        <div className="hidden lg:block w-1/2 relative">
-          <img 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=1600&fit=crop" 
-            alt="Interior" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute bottom-10 left-10">
-            <p className="text-[10px] tracking-[0.2em] uppercase text-white/50 mb-2">Scroll</p>
-            <ArrowDown className="w-3.5 h-3.5 text-white/30 animate-bounce" strokeWidth={1} />
+        <div className="relative z-10 w-full px-6 md:px-10 pb-16 md:pb-24">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-end">
+              <div className="animate-fade-in-up">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-paper/60 mb-6">AI-Powered Design Platform</p>
+                
+                <h1 className="font-serif text-paper leading-[1.02]">
+                  <span className="block text-[clamp(2.5rem,7vw,6rem)]">Houses that</span>
+                  <span className="block text-[clamp(2.5rem,7vw,6rem)] mt-1">invite you to</span>
+                  <em className="block text-[clamp(2.5rem,7vw,6rem)] text-paper/70 mt-1">pause time</em>
+                </h1>
+              </div>
+              
+              <div className="lg:text-right animate-fade-in-up delay-200">
+                <p className="text-paper/70 text-sm leading-[1.8] max-w-sm lg:ml-auto mb-8">
+                  Where artificial intelligence meets architectural artistry. Design your space, visualize it in photorealistic 3D, and shop every item — all from one platform.
+                </p>
+                <div className="flex items-center gap-8 lg:justify-end">
+                  <Link to="/design-studio" className="group flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase text-paper hover:text-paper/70 transition-colors">
+                    Start Designing
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+                  </Link>
+                  <Link to="/marketplace" className="text-[11px] tracking-[0.12em] uppercase text-paper/50 hover:text-paper transition-colors">
+                    Explore
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-16 flex items-center gap-2">
+              <p className="text-[10px] tracking-[0.2em] uppercase text-paper/40">Scroll</p>
+              <ArrowDown className="w-3 h-3 text-paper/30 animate-bounce" strokeWidth={1} />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-20">
           <div>
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/00 About</span>
-            <h2 className="font-serif text-ink leading-[1.1]">
+            <h2 className="font-serif text-ink leading-[1.05]">
               <span className="block text-[clamp(2rem,4vw,3.5rem)]">Every space</span>
               <span className="block text-[clamp(2rem,4vw,3.5rem)]">should be as</span>
               <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">unique as you</em>
@@ -71,35 +120,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Horizontal Image Gallery */}
+      <section className="py-8 border-t border-line overflow-hidden">
+        <div className="flex gap-4 animate-[scroll_30s_linear_infinite]" style={{ width: 'max-content' }}>
+          {[...galleryImages, ...galleryImages].map((img, i) => (
+            <div key={i} className="w-[350px] h-[450px] flex-shrink-0 overflow-hidden">
+              <img src={img} alt={`Gallery ${i}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Three Platforms */}
-      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/01 The Platform</span>
           
-          <div className="space-y-32">
-            {[
-              {
-                num: '/01',
-                title: 'AI Design Studio',
-                desc: 'Upload a photo of your space. Set your preferences. Receive multiple professionally designed concepts with 3D renders, layouts, and a complete shopping list — in minutes, not weeks.',
-                link: '/design-studio',
-                image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=1000&fit=crop',
-              },
-              {
-                num: '/02',
-                title: 'Visualization',
-                desc: 'Photorealistic exterior and interior renders, 360° panoramas, and cinematic virtual walkthroughs for architects, developers, and real estate professionals.',
-                link: '/visualization',
-                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop',
-              },
-              {
-                num: '/03',
-                title: 'Marketplace',
-                desc: 'Every item in your AI-generated design is clickable and shoppable. Partnered with the world\'s finest furniture brands. Your complete room, delivered to your door.',
-                link: '/marketplace',
-                image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=1000&fit=crop',
-              },
-            ].map((platform, i) => (
+          <div className="space-y-36">
+            {platforms.map((platform, i) => (
               <div key={i} className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="aspect-[4/5] overflow-hidden">
@@ -111,7 +149,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                  <span className="font-serif text-5xl text-line block mb-8">{platform.num}</span>
+                  <span className="font-serif text-6xl text-line block mb-8">{platform.num}</span>
                   <h3 className="font-serif text-3xl md:text-4xl text-ink mb-6">{platform.title}</h3>
                   <p className="text-stone text-sm leading-[1.9] mb-8 max-w-md">{platform.desc}</p>
                   <Link 
@@ -119,7 +157,7 @@ export default function Home() {
                     className="inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase text-ink hover:text-stone transition-colors group"
                   >
                     Discover
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
                   </Link>
                 </div>
               </div>
@@ -129,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line bg-ink">
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line bg-ink">
         <div className="max-w-[1400px] mx-auto">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/02 By Numbers</span>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
@@ -140,7 +178,7 @@ export default function Home() {
               { value: '98%', label: 'Satisfaction' },
             ].map((stat, i) => (
               <div key={i}>
-                <span className="font-serif text-4xl md:text-5xl text-paper block">{stat.value}</span>
+                <span className="font-serif text-4xl md:text-6xl text-paper block">{stat.value}</span>
                 <span className="text-stone text-xs mt-3 block tracking-wide">{stat.label}</span>
               </div>
             ))}
@@ -149,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/03 How It Works</span>
           
@@ -161,7 +199,7 @@ export default function Home() {
               { num: '/04', title: 'Shop the Room', desc: 'Click any item to purchase from our curated partner brands.' },
             ].map((step, i) => (
               <div key={i}>
-                <span className="font-serif text-4xl text-line block mb-6">{step.num}</span>
+                <span className="font-serif text-5xl text-line block mb-6">{step.num}</span>
                 <h3 className="font-serif text-lg text-ink mb-3">{step.title}</h3>
                 <p className="text-stone text-sm leading-[1.8]">{step.desc}</p>
               </div>
@@ -170,10 +208,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Revenue Model */}
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/04 Revenue Model</span>
+          <h2 className="font-serif text-ink leading-[1.05] mb-16">
+            <span className="block text-[clamp(2rem,4vw,3rem)]">Multiple income</span>
+            <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">streams</em>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+            {revenueStreams.map((r, i) => (
+              <div key={i} className="bg-paper p-10 hover:bg-paper/80 transition-all">
+                <span className="text-[10px] text-stone block mb-4">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-serif text-lg text-ink mb-2">{r.title}</h3>
+                <p className="text-sm text-stone leading-relaxed">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="py-24 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/05 Partner Brands</span>
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
+            {['Herman Miller', 'Knoll', 'Flos', 'Vitra', 'Carl Hansen', 'Muuto', 'Louis Poulsen', 'B&B Italia'].map((brand, i) => (
+              <span key={i} className="font-serif text-stone/40 text-lg hover:text-stone transition-colors cursor-default">{brand}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-ink leading-[1.1] mb-8">
+          <h2 className="font-serif text-ink leading-[1.05] mb-8">
             <span className="block text-[clamp(2rem,4vw,3.5rem)]">Ready to transform</span>
             <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">your space?</em>
           </h2>
