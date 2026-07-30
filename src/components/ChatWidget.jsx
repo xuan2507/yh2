@@ -14,11 +14,11 @@ const aiResponses = {
   'visualization': 'We offer photorealistic exterior and interior renders, 360° panoramas, virtual walkthroughs, landscape visualization, urban planning concepts, and marketing visuals for architects and developers.',
   'shop': 'Every item in your AI-generated design is clickable and shoppable. Simply click on any product in your render to view details and add it to your cart. We partner with top furniture brands worldwide.',
   'pricing': 'Our Design Studio is free to try. Visualization projects start from $300. Marketplace products are priced by our partner brands. We also offer subscription plans for retailers starting at $99/month.',
-  'partner': 'We partner with furniture brands, lighting suppliers, home decor retailers, and more. Partners get featured placement in AI-generated designs. Apply through our Marketplace page or email partners@atelierai.studio.',
+  'partner': 'We partner with furniture brands, lighting suppliers, home decor retailers, and more. Partners get featured placement in AI-generated designs. Apply through our Marketplace page or email partners@xuantelier.com.',
   'payment': 'We accept Touch n Go e-wallet, bank transfer, and all major credit/debit cards (Visa, Mastercard, Amex). You can select your preferred payment method at checkout.',
   'delivery': 'Delivery times vary by product and brand, typically 1-4 weeks. Each product page shows estimated delivery. We deliver to 12 countries worldwide.',
-  'refund': 'Refund policies are set by individual partner brands. Most offer 14-30 day returns. Contact us at support@atelierai.studio for assistance.',
-  'contact': 'You can reach us at hello@atelierai.studio or call +1 (555) 234-5678. Our AI assistant is available 24/7 for instant answers.',
+  'refund': 'Refund policies are set by individual partner brands. Most offer 14-30 day returns. Contact us at support@xuantelier.com for assistance.',
+  'contact': 'You can reach us at hello@xuantelier.com or call +1 (555) 234-5678. Our AI assistant is available 24/7 for instant answers.',
   'default': 'I\'d be happy to help with that. Could you provide more details about what you\'re looking for? You can also browse our Design Studio, Visualization, or Marketplace pages for more information.',
 };
 
@@ -33,7 +33,7 @@ function getAIResponse(text) {
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'ai', text: 'Hello! I\'m your Atelier AI assistant. I can help you with design, visualization, shopping, or any questions about our platform. What can I do for you today?' }
+    { role: 'ai', text: 'Hello! I\'m your xuantelier assistant. I can help you with design, visualization, shopping, or any questions about our platform. What can I do for you today?' }
   ]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
@@ -73,7 +73,7 @@ export default function ChatWidget() {
               <Bot className="w-4 h-4 text-paper" strokeWidth={1.5} />
             </div>
             <div>
-              <p className="font-serif text-ink text-sm">Atelier AI Assistant</p>
+              <p className="font-serif text-ink text-sm">xuantelier Assistant</p>
               <p className="text-[10px] text-stone flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
                 Online 24/7

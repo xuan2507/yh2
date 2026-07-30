@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-4">
-            <span className="font-serif text-lg text-ink">Atelier<span className="italic text-stone">AI</span></span>
+            <span className="font-serif text-lg text-ink">xuantelier</span>
             <p className="text-stone text-sm leading-relaxed mt-4 max-w-xs">
               AI-powered interior design, architectural visualization, and a shoppable home marketplace.
             </p>
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-line flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-[11px] text-stone">2025 Atelier AI</span>
+          <span className="text-[11px] text-stone">2025 xuantelier</span>
           <div className="flex items-center gap-6 text-[11px] text-stone">
             <a href="#" className="hover:text-ink transition-colors">Privacy</a>
             <a href="#" className="hover:text-ink transition-colors">Terms</a>

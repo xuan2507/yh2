@@ -16,7 +16,7 @@ export default function About() {
           </div>
           <div>
             <p className="text-stone text-sm leading-[1.9]">
-              Atelier AI unifies AI-powered interior design, professional architectural visualization, and a curated marketplace into one seamless experience. Founded on the belief that great design should be accessible to everyone.
+              xuantelier unifies AI-powered interior design, professional architectural visualization, and a curated marketplace into one seamless experience. Founded on the belief that great design should be accessible to everyone.
             </p>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function About() {
           <div className="aspect-[21/9] overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=700&fit=crop" 
-              alt="Atelier AI Studio" 
+              alt="xuantelier Studio" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -49,7 +49,7 @@ export default function About() {
                 Traditional interior design is fragmented. You hire a designer, wait weeks for concepts, then spend months sourcing furniture from dozens of websites, hoping everything works together.
               </p>
               <p>
-                Atelier AI eliminates that friction. Our AI designs your space in minutes, renders it photorealistically, and instantly turns every item into a shoppable product. What you see is exactly what you can buy.
+                xuantelier eliminates that friction. Our AI designs your space in minutes, renders it photorealistically, and instantly turns every item into a shoppable product. What you see is exactly what you can buy.
               </p>
               <p>
                 As a solo-founded company, we move fast, iterate constantly, and obsess over every detail of the customer experience.
@@ -119,7 +119,7 @@ export default function About() {
                   </div>
                   <div>
                     <span className="block text-[10px] tracking-[0.2em] uppercase text-stone">Email</span>
-                    <span className="text-ink text-sm">hello@atelierai.studio</span>
+                    <span className="text-ink text-sm">hello@xuantelier.com</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-5">

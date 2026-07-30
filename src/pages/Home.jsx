@@ -398,7 +398,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={150}>
             <p className="text-stone text-sm leading-[1.8] max-w-md mx-auto mb-12">
-              Join thousands of homeowners, designers, and architects who are already designing, visualizing, and furnishing with Atelier AI.
+              Join thousands of homeowners, designers, and architects who are already designing, visualizing, and furnishing with xuantelier.
             </p>
           </Reveal>
           <Reveal delay={250}>

@@ -9,10 +9,10 @@ export default function Payment() {
   const [submitted, setSubmitted] = useState(false);
 
   const banks = [
-    { name: 'Maybank', account: '5623 8910 2345', holder: 'Atelier AI Sdn Bhd' },
-    { name: 'CIMB Bank', account: '7605 4321 0987', holder: 'Atelier AI Sdn Bhd' },
-    { name: 'Public Bank', account: '3298 7654 3210', holder: 'Atelier AI Sdn Bhd' },
-    { name: 'HSBC', account: '1456 7890 1234', holder: 'Atelier AI Sdn Bhd' },
+    { name: 'Maybank', account: '5623 8910 2345', holder: 'xuantelier Sdn Bhd' },
+    { name: 'CIMB Bank', account: '7605 4321 0987', holder: 'xuantelier Sdn Bhd' },
+    { name: 'Public Bank', account: '3298 7654 3210', holder: 'xuantelier Sdn Bhd' },
+    { name: 'HSBC', account: '1456 7890 1234', holder: 'xuantelier Sdn Bhd' },
   ];
 
   const handleSubmit = (e) => {

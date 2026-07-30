@@ -85,7 +85,7 @@ export default function Visualization() {
       <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-20 items-start">
           <div>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/07 Why Atelier AI</span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/07 Why xuantelier</span>
             <h2 className="font-serif text-ink leading-[1.1] mb-10">
               <span className="block text-[clamp(2rem,4vw,3rem)]">Faster, better,</span>
               <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">more affordable</em>
