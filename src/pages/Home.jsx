@@ -175,7 +175,7 @@ export default function Home() {
       {/* Full-bleed image divider */}
       <section className="h-[70vh] relative overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1920&h=1080&fit=crop" 
+          src="https://images.pexels.com/photos/1643380/pexels-photo-1643380.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
           alt="Architecture" 
           className="w-full h-full object-cover"
         />
@@ -294,7 +294,7 @@ export default function Home() {
       {/* Full-bleed parallax divider 2 */}
       <section className="h-[60vh] relative overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1920&h=1080&fit=crop" 
+          src="https://images.pexels.com/photos/1571450/pexels-photo-1571450.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
           alt="Interior detail" 
           className="w-full h-full object-cover"
         />

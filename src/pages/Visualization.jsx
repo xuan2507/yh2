@@ -53,7 +53,7 @@ export default function Visualization() {
             <div className="absolute top-5 left-5 text-[10px] tracking-[0.2em] uppercase text-stone">Before</div>
           </div>
           <div className="aspect-[4/3] relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1592315862863-f5f4ff421b3b?w=1000&h=750&fit=crop" alt="Render" className="w-full h-full object-cover" />
+            <img src="https://images.pexels.com/photos/1648970/pexels-photo-1648970.jpeg?auto=compress&cs=tinysrgb&w=1000&h=750&fit=crop" alt="Render" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
             <div className="absolute top-5 left-5 text-[10px] tracking-[0.2em] uppercase text-paper bg-ink px-2 py-1">After</div>
             <div className="absolute bottom-8 left-8 right-8">
@@ -126,12 +126,12 @@ export default function Visualization() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
             {[
-              { src: 'https://images.unsplash.com/photo-1614961234425-dedd96e5e699?w=800&h=600&fit=crop', title: 'Coastal Villa Render', type: 'Exterior' },
-              { src: 'https://images.pexels.com/photos/1649480/pexels-photo-1649480.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Minimalist Loft', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/1649510/pexels-photo-1649510.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Scandinavian Retreat', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/1649630/pexels-photo-1649630.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Urban Penthouse', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/1649700/pexels-photo-1649700.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Mediterranean Estate', type: 'Exterior' },
-              { src: 'https://images.pexels.com/photos/1649750/pexels-photo-1649750.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Desert Modern', type: 'Exterior' },
+              { src: 'https://images.pexels.com/photos/1648980/pexels-photo-1648980.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Coastal Villa Render', type: 'Exterior' },
+              { src: 'https://images.pexels.com/photos/1649020/pexels-photo-1649020.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Minimalist Loft', type: 'Interior' },
+              { src: 'https://images.pexels.com/photos/1649110/pexels-photo-1649110.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Scandinavian Retreat', type: 'Interior' },
+              { src: 'https://images.pexels.com/photos/1649120/pexels-photo-1649120.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Urban Penthouse', type: 'Interior' },
+              { src: 'https://images.pexels.com/photos/1649140/pexels-photo-1649140.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Mediterranean Estate', type: 'Exterior' },
+              { src: 'https://images.pexels.com/photos/1649170/pexels-photo-1649170.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Desert Modern', type: 'Exterior' },
             ].map((item, i) => (
               <div key={i} className="bg-paper group relative overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
