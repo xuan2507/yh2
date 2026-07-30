@@ -2,14 +2,14 @@ import { Camera, Box, TreePine, Building2, RotateCcw, Video, Sun, Moon, Check, A
 
 export default function Visualization() {
   const services = [
-    { title: 'Exterior Renders', desc: 'Photorealistic building exteriors with accurate lighting, materials, and landscaping.', price: 'From $500' },
-    { title: 'Interior Renders', desc: 'Stunning interior visualizations showcasing space, light, and materiality.', price: 'From $400' },
-    { title: 'Landscape Visualization', desc: 'Beautiful outdoor spaces, gardens, and environmental contexts.', price: 'From $350' },
-    { title: 'Urban Planning', desc: 'Large-scale masterplans and urban design visualizations.', price: 'From $800' },
-    { title: '360° Panoramic Views', desc: 'Immersive spherical renders for VR headsets and virtual tours.', price: 'From $600' },
-    { title: 'Virtual Walkthroughs', desc: 'Cinematic animated flythroughs bringing projects to life.', price: 'From $1,200' },
-    { title: 'Day & Night Scenes', desc: 'Multiple lighting scenarios from morning to evening ambiance.', price: 'From $300' },
-    { title: 'Marketing Visuals', desc: 'Lifestyle-oriented renders for brochures, websites, and campaigns.', price: 'From $450' },
+    { title: 'Exterior Renders', desc: 'Photorealistic building exteriors with accurate lighting, materials, and landscaping.', price: 'From $500', image: 'https://images.pexels.com/photos/6492397/pexels-photo-6492397.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Interior Renders', desc: 'Stunning interior visualizations showcasing space, light, and materiality.', price: 'From $400', image: 'https://images.pexels.com/photos/6489116/pexels-photo-6489116.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Landscape Visualization', desc: 'Beautiful outdoor spaces, gardens, and environmental contexts.', price: 'From $350', image: 'https://images.pexels.com/photos/5824529/pexels-photo-5824529.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Urban Planning', desc: 'Large-scale masterplans and urban design visualizations.', price: 'From $800', image: 'https://images.pexels.com/photos/6224253/pexels-photo-6224253.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: '360° Panoramic Views', desc: 'Immersive spherical renders for VR headsets and virtual tours.', price: 'From $600', image: 'https://images.pexels.com/photos/6489115/pexels-photo-6489115.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Virtual Walkthroughs', desc: 'Cinematic animated flythroughs bringing projects to life.', price: 'From $1,200', image: 'https://images.pexels.com/photos/5824901/pexels-photo-5824901.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Day & Night Scenes', desc: 'Multiple lighting scenarios from morning to evening ambiance.', price: 'From $300', image: 'https://images.pexels.com/photos/5998137/pexels-photo-5998137.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
+    { title: 'Marketing Visuals', desc: 'Lifestyle-oriented renders for brochures, websites, and campaigns.', price: 'From $450', image: 'https://images.pexels.com/photos/5490302/pexels-photo-5490302.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop' },
   ];
 
   const benefits = [
@@ -71,10 +71,15 @@ export default function Visualization() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-line">
             {services.map((s, i) => (
-              <div key={i} className="bg-paper p-8 hover:bg-paper/80 transition-all group">
-                <h3 className="font-serif text-lg text-ink mb-2">{s.title}</h3>
-                <p className="text-sm text-stone mb-6 leading-relaxed">{s.desc}</p>
-                <span className="text-[10px] tracking-[0.15em] uppercase text-stone">{s.price}</span>
+              <div key={i} className="bg-paper hover:bg-paper/80 transition-all group">
+                <div className="aspect-[3/2] overflow-hidden">
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-serif text-lg text-ink mb-2">{s.title}</h3>
+                  <p className="text-sm text-stone mb-6 leading-relaxed">{s.desc}</p>
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-stone">{s.price}</span>
+                </div>
               </div>
             ))}
           </div>

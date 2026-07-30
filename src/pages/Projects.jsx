@@ -591,6 +591,59 @@ export default function Projects() {
         </div>
       </section>
 
+      {/* Customer Stories */}
+      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/02 Customer Stories</span>
+          <h2 className="font-serif text-ink leading-[1.05] mb-16">
+            <span className="block text-[clamp(2rem,4vw,3rem)]">Real homes,</span>
+            <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">real transformations</em>
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-px bg-line">
+            {[
+              {
+                before: 'https://images.pexels.com/photos/6489108/pexels-photo-6489108.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                after: 'https://images.pexels.com/photos/5824525/pexels-photo-5824525.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                client: 'The Morrison Family',
+                project: 'Hauraki Cliff House',
+                quote: 'The AI design captured exactly the coastal warmth we wanted. Walking through the 3D render before construction started gave us complete confidence.',
+              },
+              {
+                before: 'https://images.pexels.com/photos/5998136/pexels-photo-5998136.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                after: 'https://images.pexels.com/photos/6489120/pexels-photo-6489120.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                client: 'Marcus Chen',
+                project: 'Tribeca Loft Conversion',
+                quote: 'Elena and the xuantelier team turned a raw warehouse into a living gallery. Every visualization matched the final result down to the material finishes.',
+              },
+              {
+                before: 'https://images.pexels.com/photos/6489117/pexels-photo-6489117.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                after: 'https://images.pexels.com/photos/5824531/pexels-photo-5824531.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+                client: 'The Hansen Family',
+                project: 'Oslo Fjord House',
+                quote: 'We wanted a home that felt connected to the fjord in every season. The visualization showed us exactly how light would move through the atrium before we broke ground.',
+              },
+            ].map((story, i) => (
+              <div key={i} className="bg-paper p-6 md:p-8">
+                <div className="grid grid-cols-2 gap-2 mb-6">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img src={story.before} alt="Before" className="w-full h-full object-cover" />
+                    <div className="absolute top-2 left-2 text-[9px] tracking-[0.15em] uppercase text-paper bg-ink/70 px-1.5 py-0.5">Before</div>
+                  </div>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img src={story.after} alt="After" className="w-full h-full object-cover" />
+                    <div className="absolute top-2 left-2 text-[9px] tracking-[0.15em] uppercase text-ink bg-paper/90 px-1.5 py-0.5">After</div>
+                  </div>
+                </div>
+                <blockquote className="text-sm text-ink leading-[1.8] italic mb-4">"{story.quote}"</blockquote>
+                <p className="text-xs text-stone mb-1">{story.client}</p>
+                <p className="text-[10px] text-stone tracking-wide">{story.project}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
         <div className="max-w-3xl mx-auto text-center">

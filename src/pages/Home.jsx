@@ -94,6 +94,41 @@ export default function Home() {
     { title: 'Visualization Projects', desc: 'Project-based fees for architectural visualization work.' },
   ];
 
+  const transformations = [
+    {
+      before: 'https://images.unsplash.com/photo-1558618660-85308281a7bb?w=800&h=600&fit=crop',
+      after: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop',
+      room: 'Living Room',
+      client: 'The Morrison Family',
+      location: 'Auckland, NZ',
+      story: 'We uploaded a photo of our dated lounge and the AI transformed it into a light-filled Scandinavian retreat. Every item was shoppable and arrived within two weeks.',
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=600&fit=crop',
+      after: 'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=800&h=600&fit=crop',
+      room: 'Master Bedroom',
+      client: 'Sarah & David Park',
+      location: 'Melbourne, AU',
+      story: 'The Japandi concept felt like it was designed just for us. The platform recommended pieces we never would have found on our own.',
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&h=600&fit=crop',
+      after: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&h=600&fit=crop',
+      room: 'Home Office',
+      client: 'Marcus Chen',
+      location: 'New York, NY',
+      story: 'I needed a productive workspace that still felt like home. The AI generated three concepts and the walkthrough let me experience each before deciding.',
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&h=600&fit=crop',
+      after: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop',
+      room: 'Dining Room',
+      client: 'Elena & Kenji Tanaka',
+      location: 'Tokyo, JP',
+      story: 'The mid-century concept with the Saarinen table and Wishbone chairs is exactly the atmosphere we wanted for hosting dinner parties.',
+    },
+  ];
+
   return (
     <div>
       {/* Full-screen Hero with parallax */}
@@ -346,11 +381,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Client Transformations */}
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/06 Real Results</span>
+            <h2 className="font-serif text-ink leading-[1.05] mb-16">
+              <span className="block text-[clamp(2rem,4vw,3rem)]">Before &</span>
+              <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">After</em>
+            </h2>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-px bg-line">
+            {transformations.map((t, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className="bg-paper p-6 md:p-8">
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="relative aspect-[4/3] overflow-hidden group">
+                      <img src={t.before} alt={`${t.room} before`} className="w-full h-full object-cover" />
+                      <div className="absolute top-3 left-3 text-[10px] tracking-[0.2em] uppercase text-paper bg-ink/70 px-2 py-1">Before</div>
+                    </div>
+                    <div className="relative aspect-[4/3] overflow-hidden group">
+                      <img src={t.after} alt={`${t.room} after`} className="w-full h-full object-cover" />
+                      <div className="absolute top-3 left-3 text-[10px] tracking-[0.2em] uppercase text-ink bg-paper/90 px-2 py-1">After</div>
+                    </div>
+                  </div>
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-stone block mb-2">{t.room}</span>
+                  <h3 className="font-serif text-lg text-ink mb-3">{t.client}</h3>
+                  <p className="text-sm text-stone leading-[1.8] mb-4">{t.story}</p>
+                  <p className="text-[10px] text-stone tracking-wide">{t.location}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Revenue Model */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/06 Revenue Model</span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/07 Revenue Model</span>
           </Reveal>
           <Reveal delay={100}>
             <h2 className="font-serif text-ink leading-[1.05] mb-16">
@@ -377,7 +448,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/07 Partner Brands</span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/08 Partner Brands</span>
           </Reveal>
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {['Herman Miller', 'Knoll', 'Flos', 'Vitra', 'Carl Hansen', 'Muuto', 'Louis Poulsen', 'B&B Italia'].map((brand, i) => (
