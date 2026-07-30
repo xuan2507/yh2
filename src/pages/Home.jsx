@@ -8,31 +8,66 @@ export default function Home() {
       title: 'AI Design Studio',
       desc: 'Upload a photo of your space. Set your preferences. Receive multiple professionally designed concepts with 3D renders, layouts, and a complete shopping list — in minutes, not weeks.',
       link: '/design-studio',
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&h=1100&fit=crop',
     },
     {
       num: '/02',
       title: 'Visualization',
       desc: 'Photorealistic exterior and interior renders, 360° panoramas, and cinematic virtual walkthroughs for architects, developers, and real estate professionals.',
       link: '/visualization',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&h=1100&fit=crop',
     },
     {
       num: '/03',
       title: 'Marketplace',
       desc: 'Every item in your AI-generated design is clickable and shoppable. Partnered with the world\'s finest furniture brands. Your complete room, delivered to your door.',
       link: '/marketplace',
-      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=1000&fit=crop',
+      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&h=1100&fit=crop',
     },
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1600210491898-03076e8ec95c?w=500&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=500&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600210491898-03076e8ec95c?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=650&fit=crop',
+  ];
+
+  const architectureImages = [
+    {
+      src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop',
+      title: 'Coastal Modern Villa',
+      location: 'Malibu, California',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&h=900&fit=crop',
+      title: 'Minimalist Loft',
+      location: 'New York, NY',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&h=900&fit=crop',
+      title: 'Scandinavian Retreat',
+      location: 'Oslo, Norway',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop',
+      title: 'Urban Penthouse',
+      location: 'London, UK',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&h=900&fit=crop',
+      title: 'Mediterranean Estate',
+      location: 'Marbella, Spain',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&h=900&fit=crop',
+      title: 'Desert Modern',
+      location: 'Palm Springs, CA',
+    },
   ];
 
   const revenueStreams = [
@@ -50,11 +85,11 @@ export default function Home() {
       <section className="min-h-screen relative flex items-end">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop" 
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop&q=90" 
             alt="Interior" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-ink/40" />
+          <div className="absolute inset-0 bg-ink/50" />
         </div>
         
         <div className="relative z-10 w-full px-6 md:px-10 pb-16 md:pb-24">
@@ -122,9 +157,9 @@ export default function Home() {
 
       {/* Horizontal Image Gallery */}
       <section className="py-8 border-t border-line overflow-hidden">
-        <div className="flex gap-4 animate-[scroll_30s_linear_infinite]" style={{ width: 'max-content' }}>
+        <div className="flex gap-4 animate-scroll" style={{ width: 'max-content' }}>
           {[...galleryImages, ...galleryImages].map((img, i) => (
-            <div key={i} className="w-[350px] h-[450px] flex-shrink-0 overflow-hidden">
+            <div key={i} className="w-[320px] h-[420px] flex-shrink-0 overflow-hidden">
               <img src={img} alt={`Gallery ${i}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
             </div>
           ))}
@@ -166,10 +201,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Architecture Showcase */}
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/02 Selected Works</span>
+          <h2 className="font-serif text-ink leading-[1.05] mb-20">
+            <span className="block text-[clamp(2rem,4vw,3.5rem)]">Architecture</span>
+            <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">& Interiors</em>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+            {architectureImages.map((item, i) => (
+              <div key={i} className="bg-paper group relative overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img 
+                    src={item.src} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-1000"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="font-serif text-white text-lg">{item.title}</p>
+                  <p className="text-white/60 text-xs mt-1">{item.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line bg-ink">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/02 By Numbers</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/03 By Numbers</span>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { value: '2,400+', label: 'Spaces Designed' },
@@ -189,7 +253,7 @@ export default function Home() {
       {/* How It Works */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/03 How It Works</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/04 How It Works</span>
           
           <div className="grid md:grid-cols-4 gap-12">
             {[
@@ -211,7 +275,7 @@ export default function Home() {
       {/* Revenue Model */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/04 Revenue Model</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/05 Revenue Model</span>
           <h2 className="font-serif text-ink leading-[1.05] mb-16">
             <span className="block text-[clamp(2rem,4vw,3rem)]">Multiple income</span>
             <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">streams</em>
@@ -232,7 +296,7 @@ export default function Home() {
       {/* Partners */}
       <section className="py-24 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/05 Partner Brands</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/06 Partner Brands</span>
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {['Herman Miller', 'Knoll', 'Flos', 'Vitra', 'Carl Hansen', 'Muuto', 'Louis Poulsen', 'B&B Italia'].map((brand, i) => (
               <span key={i} className="font-serif text-stone/40 text-lg hover:text-stone transition-colors cursor-default">{brand}</span>
