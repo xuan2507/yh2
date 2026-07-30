@@ -7,28 +7,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
+        cream: {
+          50: '#FDFCFA',
+          100: '#FAF7F2',
+          200: '#F5F0E8',
+          300: '#EDE6D9',
+          400: '#E0D5C5',
         },
-        dark: {
-          900: '#0a0a0f',
-          800: '#12121a',
-          700: '#1a1a25',
-          600: '#252535',
+        sand: {
+          100: '#D4C4B0',
+          200: '#C4B098',
+          300: '#B09A80',
+        },
+        terra: {
+          300: '#C4916C',
+          400: '#B07D58',
+          500: '#9C6B48',
+          600: '#8A5E3F',
+        },
+        charcoal: {
+          800: '#1A1A1A',
+          700: '#2D2D2D',
+          600: '#3D3D3D',
+          500: '#5C5C5C',
+          400: '#7A7A7A',
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      letterSpacing: {
+        'widest': '0.2em',
       },
     },
   },
