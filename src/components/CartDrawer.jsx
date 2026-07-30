@@ -8,44 +8,40 @@ export default function CartDrawer() {
 
   return (
     <>
-      <div className="fixed inset-0 bg-charcoal-800/20 backdrop-blur-sm z-50" onClick={() => setIsOpen(false)} />
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-cream-100 border-l border-sand-100/30 z-50 flex flex-col">
-        <div className="flex items-center justify-between p-8 border-b border-sand-100/30">
-          <div className="flex items-center gap-3">
-            <ShoppingBag className="w-4 h-4 text-terra-500" strokeWidth={1.5} />
-            <h2 className="font-serif text-xl text-charcoal-800">Your Cart</h2>
-          </div>
-          <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-sand-100/30 transition-colors">
-            <X className="w-4 h-4 text-charcoal-600" strokeWidth={1.5} />
+      <div className="fixed inset-0 bg-ink/10 backdrop-blur-sm z-50" onClick={() => setIsOpen(false)} />
+      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-paper border-l border-line z-50 flex flex-col">
+        <div className="flex items-center justify-between p-8 border-b border-line">
+          <span className="font-serif text-lg text-ink">Your Cart</span>
+          <button onClick={() => setIsOpen(false)} className="text-stone hover:text-ink transition-colors">
+            <X className="w-4 h-4" strokeWidth={1.5} />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-8 space-y-6">
           {items.length === 0 ? (
             <div className="text-center py-16">
-              <ShoppingBag className="w-10 h-10 text-sand-200 mx-auto mb-4" strokeWidth={1} />
-              <p className="font-serif text-lg text-charcoal-500">Your cart is empty</p>
-              <p className="text-charcoal-400 text-sm mt-1">Add products from the marketplace</p>
+              <ShoppingBag className="w-8 h-8 text-line mx-auto mb-4" strokeWidth={1} />
+              <p className="text-stone text-sm">Your cart is empty</p>
             </div>
           ) : (
             items.map(item => (
-              <div key={item.id} className="flex gap-5 pb-6 border-b border-sand-100/30 last:border-0">
-                <div className="w-24 h-24 bg-cream-200 flex-shrink-0 overflow-hidden">
+              <div key={item.id} className="flex gap-5 pb-6 border-b border-line last:border-0">
+                <div className="w-20 h-20 bg-paper flex-shrink-0 overflow-hidden">
                   <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-serif text-charcoal-800 truncate">{item.name}</h3>
-                  <p className="text-charcoal-400 text-xs mt-0.5">{item.brand}</p>
-                  <p className="font-serif text-terra-500 mt-2">${item.price.toLocaleString()}</p>
-                  <div className="flex items-center gap-3 mt-3">
-                    <button onClick={() => updateQty(item.id, item.qty - 1)} className="w-7 h-7 flex items-center justify-center border border-sand-200 hover:border-terra-300 transition-colors">
+                  <h3 className="font-serif text-ink text-sm">{item.name}</h3>
+                  <p className="text-stone text-xs mt-0.5">{item.brand}</p>
+                  <p className="font-serif text-ink mt-2">${item.price.toLocaleString()}</p>
+                  <div className="flex items-center gap-2 mt-3">
+                    <button onClick={() => updateQty(item.id, item.qty - 1)} className="w-6 h-6 flex items-center justify-center border border-line hover:border-ink transition-colors">
                       <Minus className="w-3 h-3" strokeWidth={1.5} />
                     </button>
-                    <span className="text-sm w-4 text-center tabular-nums">{item.qty}</span>
-                    <button onClick={() => updateQty(item.id, item.qty + 1)} className="w-7 h-7 flex items-center justify-center border border-sand-200 hover:border-terra-300 transition-colors">
+                    <span className="text-xs w-4 text-center tabular-nums">{item.qty}</span>
+                    <button onClick={() => updateQty(item.id, item.qty + 1)} className="w-6 h-6 flex items-center justify-center border border-line hover:border-ink transition-colors">
                       <Plus className="w-3 h-3" strokeWidth={1.5} />
                     </button>
-                    <button onClick={() => removeItem(item.id)} className="ml-auto text-charcoal-400 hover:text-terra-500 transition-colors">
+                    <button onClick={() => removeItem(item.id)} className="ml-auto text-stone hover:text-ink transition-colors">
                       <Trash2 className="w-3.5 h-3.5" strokeWidth={1.5} />
                     </button>
                   </div>
@@ -56,15 +52,15 @@ export default function CartDrawer() {
         </div>
 
         {items.length > 0 && (
-          <div className="p-8 border-t border-sand-100/30 space-y-4">
+          <div className="p-8 border-t border-line space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-charcoal-500 text-sm tracking-wide">Subtotal</span>
-              <span className="font-serif text-2xl text-charcoal-800">${total.toLocaleString()}</span>
+              <span className="text-stone text-sm">Subtotal</span>
+              <span className="font-serif text-xl text-ink">${total.toLocaleString()}</span>
             </div>
-            <button className="w-full py-4 bg-charcoal-800 hover:bg-charcoal-700 text-cream-100 text-[13px] tracking-[0.15em] uppercase transition-all">
+            <button className="w-full py-4 bg-ink hover:bg-stone text-paper text-[12px] tracking-[0.12em] uppercase transition-all">
               Checkout
             </button>
-            <button onClick={clearCart} className="w-full py-3 text-charcoal-400 hover:text-charcoal-600 text-xs tracking-wide transition-colors">
+            <button onClick={clearCart} className="w-full py-2 text-stone hover:text-ink text-[11px] transition-colors">
               Clear Cart
             </button>
           </div>

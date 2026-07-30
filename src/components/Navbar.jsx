@@ -10,7 +10,7 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 100);
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -22,85 +22,72 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
   ];
 
-  const isActive = (path) => location.pathname === path;
-
   return (
-    <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'bg-cream-100/95 backdrop-blur-md border-b border-sand-100/30' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-6 flex items-center justify-between">
-          <Link to="/" className="flex items-baseline gap-1">
-            <span className="font-serif text-2xl tracking-tight text-charcoal-800">Atelier</span>
-            <span className="font-serif text-2xl italic text-terra-500">AI</span>
-          </Link>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      scrolled ? 'bg-paper/90 backdrop-blur-sm' : 'bg-transparent'
+    }`}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+        <Link to="/" className="font-serif text-lg tracking-tight text-ink">
+          Atelier<span className="italic text-stone">AI</span>
+        </Link>
 
-          <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`text-[13px] tracking-[0.15em] uppercase transition-colors duration-300 ${
-                  isActive(link.href) ? 'text-terra-500' : 'text-charcoal-500 hover:text-charcoal-800'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          <div className="hidden md:flex items-center gap-6">
-            <button
-              onClick={() => setIsOpen(true)}
-              className="relative text-charcoal-600 hover:text-charcoal-800 transition-colors"
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className={`text-[12px] tracking-[0.12em] uppercase transition-colors duration-300 ${
+                location.pathname === link.href ? 'text-ink' : 'text-stone hover:text-ink'
+              }`}
             >
-              <ShoppingBag className="w-[18px] h-[18px]" strokeWidth={1.5} />
-              {count > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-terra-500 text-white text-[10px] rounded-full flex items-center justify-center">
-                  {count}
-                </span>
-              )}
-            </button>
-            <Link 
-              to="/design-studio" 
-              className="text-[13px] tracking-[0.15em] uppercase px-6 py-3 bg-charcoal-800 hover:bg-charcoal-700 text-cream-100 transition-all duration-300"
-            >
-              Start
+              {link.name}
             </Link>
-          </div>
-
-          <div className="md:hidden flex items-center gap-4">
-            <button onClick={() => setIsOpen(true)} className="relative text-charcoal-600">
-              <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
-              {count > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-terra-500 text-white text-[10px] rounded-full flex items-center justify-center">
-                  {count}
-                </span>
-              )}
-            </button>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-charcoal-800">
-              {isMenuOpen ? <X className="w-5 h-5" strokeWidth={1.5} /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}
-            </button>
-          </div>
+          ))}
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden bg-cream-100 border-b border-sand-100/30 px-8 py-10 space-y-6">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.href} 
-                onClick={() => setIsMenuOpen(false)} 
-                className="block text-[13px] tracking-[0.15em] uppercase text-charcoal-600 hover:text-charcoal-800 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        )}
-      </nav>
-    </>
+        <div className="hidden md:flex items-center gap-6">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative text-stone hover:text-ink transition-colors"
+          >
+            <ShoppingBag className="w-[15px] h-[15px]" strokeWidth={1.5} />
+            {count > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-ink text-paper text-[9px] flex items-center justify-center">
+                {count}
+              </span>
+            )}
+          </button>
+        </div>
+
+        <div className="md:hidden flex items-center gap-4">
+          <button onClick={() => setIsOpen(true)} className="relative text-stone">
+            <ShoppingBag className="w-[15px] h-[15px]" strokeWidth={1.5} />
+            {count > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-ink text-paper text-[9px] flex items-center justify-center">
+                {count}
+              </span>
+            )}
+          </button>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-ink">
+            {isMenuOpen ? <X className="w-4 h-4" strokeWidth={1.5} /> : <Menu className="w-4 h-4" strokeWidth={1.5} />}
+          </button>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden bg-paper border-b border-line px-6 py-8 space-y-4">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              to={link.href} 
+              onClick={() => setIsMenuOpen(false)} 
+              className="block text-[12px] tracking-[0.12em] uppercase text-stone hover:text-ink transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }

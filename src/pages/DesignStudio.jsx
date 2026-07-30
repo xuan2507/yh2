@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Upload, Maximize, DollarSign, Palette, Sparkles, Check, Home, Coffee, Briefcase, Store, Hotel, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Upload, Check, Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function DesignStudio() {
   const [step, setStep] = useState(1);
@@ -20,18 +20,18 @@ export default function DesignStudio() {
   const budgets = ['Under $2,000', '$2,000 - $5,000', '$5,000 - $10,000', '$10,000 - $25,000', '$25,000+'];
 
   const deliverables = [
-    { icon: <Palette className="w-5 h-5" strokeWidth={1.5} />, title: 'AI Mood Boards', desc: 'Curated color palettes and material selections' },
-    { icon: <Maximize className="w-5 h-5" strokeWidth={1.5} />, title: 'Optimized Layouts', desc: 'Furniture placement for flow and function' },
-    { icon: <Sparkles className="w-5 h-5" strokeWidth={1.5} />, title: '3D Renders', desc: 'Photorealistic visualizations' },
-    { icon: <DollarSign className="w-5 h-5" strokeWidth={1.5} />, title: 'Shopping Lists', desc: 'Every product linked to marketplace' },
+    { title: 'AI Mood Boards', desc: 'Curated color palettes and material selections' },
+    { title: 'Optimized Layouts', desc: 'Furniture placement for flow and function' },
+    { title: '3D Renders', desc: 'Photorealistic visualizations of your final design' },
+    { title: 'Shopping Lists', desc: 'Every product linked to our marketplace with pricing' },
   ];
 
   const customers = [
-    { icon: <Home className="w-5 h-5" strokeWidth={1.5} />, name: 'Homeowners', desc: 'Transform any room' },
-    { icon: <Coffee className="w-5 h-5" strokeWidth={1.5} />, name: 'Cafes & Restaurants', desc: 'Memorable experiences' },
-    { icon: <Briefcase className="w-5 h-5" strokeWidth={1.5} />, name: 'Offices', desc: 'Inspiring workspaces' },
-    { icon: <Store className="w-5 h-5" strokeWidth={1.5} />, name: 'Retail Stores', desc: 'Layouts that drive sales' },
-    { icon: <Hotel className="w-5 h-5" strokeWidth={1.5} />, name: 'Hotels & Airbnb', desc: '5-star guest experiences' },
+    { name: 'Homeowners', desc: 'Transform any room in your home' },
+    { name: 'Cafes & Restaurants', desc: 'Create memorable dining experiences' },
+    { name: 'Offices', desc: 'Productive and inspiring workspaces' },
+    { name: 'Retail Stores', desc: 'Layouts that drive sales' },
+    { name: 'Hotels & Airbnb', desc: 'Guest experiences that earn 5-star reviews' },
   ];
 
   const handleUpload = () => {
@@ -48,19 +48,19 @@ export default function DesignStudio() {
   };
 
   return (
-    <div className="pt-32">
+    <div className="pt-28">
       {/* Hero */}
-      <section className="px-8 md:px-12 lg:px-20 pb-24">
+      <section className="px-6 md:px-10 pb-24">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-end">
           <div>
-            <p className="text-[11px] tracking-[0.3em] uppercase text-terra-500 mb-8">AI Design Studio</p>
-            <h1 className="editorial-heading text-charcoal-800">
-              <span className="block text-5xl md:text-6xl">Your space,</span>
-              <em className="block text-5xl md:text-6xl text-terra-500 mt-2">reimagined</em>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">AI Design Studio</span>
+            <h1 className="font-serif text-ink leading-[1.05]">
+              <span className="block text-[clamp(2.5rem,5vw,4rem)]">Your space,</span>
+              <em className="block text-[clamp(2.5rem,5vw,4rem)] text-stone mt-1">reimagined</em>
             </h1>
           </div>
           <div>
-            <p className="text-charcoal-500 leading-[1.8]">
+            <p className="text-stone text-sm leading-[1.9]">
               Upload a photo of your room, set your preferences, and receive multiple professional design concepts complete with 3D renders, layouts, and a shoppable product list — all within minutes.
             </p>
           </div>
@@ -68,9 +68,9 @@ export default function DesignStudio() {
       </section>
 
       {/* Hero Image */}
-      <section className="px-8 md:px-12 lg:px-20 pb-32">
+      <section className="px-6 md:px-10 pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <div className="aspect-[21/9] overflow-hidden bg-cream-300">
+          <div className="aspect-[21/9] overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&h=700&fit=crop" 
               alt="Interior Design" 
@@ -80,21 +80,20 @@ export default function DesignStudio() {
         </div>
       </section>
 
-      {/* Interactive Design Tool */}
-      <section className="px-8 md:px-12 lg:px-20 pb-32 bg-cream-200 py-32">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-terra-500 mb-12 text-center">Try It Now</p>
+      {/* Interactive Tool */}
+      <section className="px-6 md:px-10 py-32 border-t border-line">
+        <div className="max-w-2xl mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">Try It Now</span>
           
-          <div className="bg-cream-100 border border-sand-100/50">
-            {/* Steps */}
-            <div className="flex items-center border-b border-sand-100/50">
+          <div className="border border-line">
+            <div className="flex items-center border-b border-line">
               {[
                 { num: 1, label: 'Upload' },
                 { num: 2, label: 'Preferences' },
                 { num: 3, label: 'Generate' },
               ].map((s, i) => (
-                <div key={i} className={`flex-1 py-5 text-center ${step >= s.num ? 'text-charcoal-800' : 'text-charcoal-300'}`}>
-                  <span className="text-[11px] tracking-[0.2em] uppercase">{s.num}. {s.label}</span>
+                <div key={i} className={`flex-1 py-4 text-center ${step >= s.num ? 'text-ink' : 'text-line'}`}>
+                  <span className="text-[11px] tracking-[0.15em] uppercase">{s.num}. {s.label}</span>
                 </div>
               ))}
             </div>
@@ -104,45 +103,43 @@ export default function DesignStudio() {
                 <div className="text-center py-12">
                   <div
                     onClick={handleUpload}
-                    className="border border-dashed border-sand-300 hover:border-terra-400 p-20 cursor-pointer transition-all hover:bg-cream-200/50"
+                    className="border border-dashed border-line hover:border-stone p-20 cursor-pointer transition-all"
                   >
-                    <Upload className="w-8 h-8 text-sand-300 mx-auto mb-4" strokeWidth={1} />
-                    <p className="font-serif text-xl text-charcoal-800 mb-2">Upload a photo of your room</p>
-                    <p className="text-sm text-charcoal-400">Or drag and drop. Floor plans work too.</p>
+                    <Upload className="w-6 h-6 text-line mx-auto mb-4" strokeWidth={1} />
+                    <p className="font-serif text-lg text-ink mb-2">Upload a photo of your room</p>
+                    <p className="text-sm text-stone">Or drag and drop. Floor plans work too.</p>
                   </div>
                 </div>
               )}
 
               {step === 1 && uploaded && (
                 <div className="text-center py-16">
-                  <div className="w-16 h-16 border border-terra-300 flex items-center justify-center mx-auto mb-6">
-                    <Check className="w-8 h-8 text-terra-500" strokeWidth={1.5} />
-                  </div>
-                  <p className="font-serif text-xl text-charcoal-800">Photo uploaded successfully</p>
+                  <Check className="w-8 h-8 text-stone mx-auto mb-4" strokeWidth={1.5} />
+                  <p className="font-serif text-lg text-ink">Photo uploaded successfully</p>
                 </div>
               )}
 
               {step === 2 && (
                 <div className="space-y-10">
                   <div>
-                    <label className="block text-[11px] tracking-[0.2em] uppercase text-charcoal-400 mb-4">Select Your Style</label>
+                    <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-4">Select Your Style</label>
                     <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
                       {styles.map((style, i) => (
-                        <button key={i} className="group text-center p-2 hover:bg-cream-200 transition-all">
-                          <div className="aspect-square overflow-hidden mb-2 border border-transparent group-hover:border-terra-300 transition-all">
+                        <button key={i} className="group text-center p-1 transition-all">
+                          <div className="aspect-square overflow-hidden mb-2 border border-transparent group-hover:border-stone transition-all">
                             <img src={style.img} alt={style.name} className="w-full h-full object-cover" />
                           </div>
-                          <span className="text-[11px] text-charcoal-500">{style.name}</span>
+                          <span className="text-[10px] text-stone">{style.name}</span>
                         </button>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] tracking-[0.2em] uppercase text-charcoal-400 mb-4">Room Type</label>
+                    <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-4">Room Type</label>
                     <div className="flex flex-wrap gap-2">
                       {['Living Room', 'Bedroom', 'Kitchen', 'Dining Room', 'Home Office', 'Bathroom'].map((room, i) => (
-                        <button key={i} className="px-5 py-2.5 border border-sand-200 hover:border-terra-300 text-charcoal-600 text-[13px] transition-all">
+                        <button key={i} className="px-4 py-2 border border-line hover:border-stone text-stone text-[12px] transition-all">
                           {room}
                         </button>
                       ))}
@@ -150,10 +147,10 @@ export default function DesignStudio() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] tracking-[0.2em] uppercase text-charcoal-400 mb-4">Budget Range</label>
+                    <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-4">Budget Range</label>
                     <div className="flex flex-wrap gap-2">
                       {budgets.map((b, i) => (
-                        <button key={i} className="px-5 py-2.5 border border-sand-200 hover:border-terra-300 text-charcoal-600 text-[13px] transition-all">
+                        <button key={i} className="px-4 py-2 border border-line hover:border-stone text-stone text-[12px] transition-all">
                           {b}
                         </button>
                       ))}
@@ -162,7 +159,7 @@ export default function DesignStudio() {
 
                   <button
                     onClick={() => { setStep(3); handleDesign(); }}
-                    className="w-full py-5 bg-charcoal-800 hover:bg-charcoal-700 text-cream-100 text-[13px] tracking-[0.15em] uppercase transition-all flex items-center justify-center gap-3"
+                    className="w-full py-5 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all flex items-center justify-center gap-3"
                   >
                     <Sparkles className="w-4 h-4" strokeWidth={1.5} />
                     Generate Design Concepts
@@ -172,38 +169,36 @@ export default function DesignStudio() {
 
               {step === 3 && designing && (
                 <div className="text-center py-20">
-                  <div className="w-12 h-12 border-2 border-sand-200 border-t-terra-500 animate-spin mx-auto mb-8" />
-                  <p className="font-serif text-xl text-charcoal-800 mb-2">AI is designing your space...</p>
-                  <p className="text-charcoal-400 text-sm">Analyzing dimensions, selecting furniture, creating renders</p>
+                  <div className="w-10 h-10 border border-line border-t-stone animate-spin mx-auto mb-8" />
+                  <p className="font-serif text-lg text-ink mb-2">AI is designing your space...</p>
+                  <p className="text-stone text-sm">Analyzing dimensions, selecting furniture, creating renders</p>
                 </div>
               )}
 
               {step === 3 && complete && (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 border border-terra-300 flex items-center justify-center mx-auto mb-8">
-                    <Sparkles className="w-8 h-8 text-terra-500" strokeWidth={1.5} />
-                  </div>
-                  <p className="font-serif text-2xl text-charcoal-800 mb-2">Your designs are ready</p>
-                  <p className="text-charcoal-400 mb-12">3 unique concepts generated with full product lists</p>
+                  <Sparkles className="w-8 h-8 text-stone mx-auto mb-6" strokeWidth={1.5} />
+                  <p className="font-serif text-2xl text-ink mb-2">Your designs are ready</p>
+                  <p className="text-stone mb-10">3 unique concepts generated with full product lists</p>
 
-                  <div className="grid md:grid-cols-3 gap-4 mb-10">
+                  <div className="grid md:grid-cols-3 gap-3 mb-10">
                     {[
-                      { name: 'Scandinavian Warmth', color: 'bg-cream-300' },
-                      { name: 'Modern Minimal', color: 'bg-sand-100' },
-                      { name: 'Japandi Zen', color: 'bg-terra-300/20' },
+                      { name: 'Scandinavian Warmth', color: 'bg-line' },
+                      { name: 'Modern Minimal', color: 'bg-stone/20' },
+                      { name: 'Japandi Zen', color: 'bg-stone/10' },
                     ].map((c, i) => (
-                      <div key={i} className={`${c.color} aspect-[3/4] flex items-end p-6`}>
-                        <span className="font-serif text-charcoal-800">{c.name}</span>
+                      <div key={i} className={`${c.color} aspect-[3/4] flex items-end p-5`}>
+                        <span className="font-serif text-ink text-sm">{c.name}</span>
                       </div>
                     ))}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/marketplace" className="px-8 py-4 bg-charcoal-800 hover:bg-charcoal-700 text-cream-100 text-[13px] tracking-[0.15em] uppercase transition-all inline-flex items-center justify-center gap-2">
+                    <Link to="/marketplace" className="px-8 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center justify-center gap-2">
                       Shop the Room
                       <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                     </Link>
-                    <button onClick={() => { setStep(1); setUploaded(false); setComplete(false); }} className="px-8 py-4 border border-charcoal-300 hover:border-charcoal-800 text-charcoal-800 text-[13px] tracking-[0.15em] uppercase transition-all">
+                    <button onClick={() => { setStep(1); setUploaded(false); setComplete(false); }} className="px-8 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all">
                       Start New Design
                     </button>
                   </div>
@@ -215,16 +210,15 @@ export default function DesignStudio() {
       </section>
 
       {/* Deliverables */}
-      <section className="py-32 px-8 md:px-12 lg:px-20">
+      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-terra-500 mb-16">04 — What You Get</p>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/04 What You Get</span>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {deliverables.map((d, i) => (
-              <div key={i} className="border-t border-sand-200 pt-8">
-                <div className="text-terra-500 mb-4">{d.icon}</div>
-                <h3 className="font-serif text-xl text-charcoal-800 mb-2">{d.title}</h3>
-                <p className="text-sm text-charcoal-500 leading-relaxed">{d.desc}</p>
+              <div key={i} className="border-t border-line pt-8">
+                <h3 className="font-serif text-lg text-ink mb-2">{d.title}</h3>
+                <p className="text-sm text-stone leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -232,16 +226,15 @@ export default function DesignStudio() {
       </section>
 
       {/* Target Customers */}
-      <section className="py-32 px-8 md:px-12 lg:px-20 bg-cream-200">
+      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-terra-500 mb-16">05 — Who We Serve</p>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/05 Who We Serve</span>
           
-          <div className="grid md:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-5 gap-8">
             {customers.map((c, i) => (
-              <div key={i} className="text-center p-8 bg-cream-100 border border-sand-100/50">
-                <div className="text-terra-500 mx-auto mb-4 flex justify-center">{c.icon}</div>
-                <h3 className="font-serif text-charcoal-800 mb-1">{c.name}</h3>
-                <p className="text-xs text-charcoal-400">{c.desc}</p>
+              <div key={i} className="border-t border-line pt-6">
+                <h3 className="font-serif text-ink mb-1">{c.name}</h3>
+                <p className="text-xs text-stone">{c.desc}</p>
               </div>
             ))}
           </div>

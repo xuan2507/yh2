@@ -12,7 +12,7 @@ import About from './pages/About';
 function App() {
   return (
     <CartProvider>
-      <div className="min-h-screen bg-cream-100 text-charcoal-800">
+      <div className="min-h-screen bg-paper text-ink">
         <Navbar />
         <CartDrawer />
         <main>
