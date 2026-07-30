@@ -15,6 +15,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Partners from './pages/Partners';
 import Walkthrough from './pages/Walkthrough';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/walkthrough" element={<Walkthrough />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>
         <Footer />

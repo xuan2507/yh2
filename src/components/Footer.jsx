@@ -16,6 +16,7 @@ export default function Footer() {
             <span className="text-[10px] tracking-[0.2em] uppercase text-stone block mb-4">Platform</span>
             <div className="space-y-2">
               <Link to="/design-studio" className="block text-sm text-stone hover:text-ink transition-colors">Design Studio</Link>
+              <Link to="/projects" className="block text-sm text-stone hover:text-ink transition-colors">Projects</Link>
               <Link to="/visualization" className="block text-sm text-stone hover:text-ink transition-colors">Visualization</Link>
               <Link to="/marketplace" className="block text-sm text-stone hover:text-ink transition-colors">Marketplace</Link>
             </div>
