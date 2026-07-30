@@ -1,7 +1,37 @@
+import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowDown, ArrowUpRight } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+
+function Reveal({ children, className = '', delay = 0 }) {
+  const { ref, visible } = useScrollReveal(0.08);
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 ease-out ${className} ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function Home() {
+  const parallaxRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!parallaxRef.current) return;
+      const scrolled = window.scrollY;
+      const rate = scrolled * 0.3;
+      parallaxRef.current.style.transform = `translateY(${rate}px)`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const platforms = [
     {
       num: '/01',
@@ -37,37 +67,22 @@ export default function Home() {
     'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=650&fit=crop',
   ];
 
+  const mosaicImages = [
+    { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=800&fit=crop', w: 'lg:col-span-2', h: 'h-[500px]' },
+    { src: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[500px]' },
+    { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[400px]' },
+    { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=500&fit=crop', w: 'lg:col-span-2', h: 'h-[400px]' },
+    { src: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
+    { src: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
+  ];
+
   const architectureImages = [
-    {
-      src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop',
-      title: 'Coastal Modern Villa',
-      location: 'Malibu, California',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&h=900&fit=crop',
-      title: 'Minimalist Loft',
-      location: 'New York, NY',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&h=900&fit=crop',
-      title: 'Scandinavian Retreat',
-      location: 'Oslo, Norway',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop',
-      title: 'Urban Penthouse',
-      location: 'London, UK',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&h=900&fit=crop',
-      title: 'Mediterranean Estate',
-      location: 'Marbella, Spain',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&h=900&fit=crop',
-      title: 'Desert Modern',
-      location: 'Palm Springs, CA',
-    },
+    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop', title: 'Coastal Modern Villa', location: 'Malibu, California' },
+    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&h=900&fit=crop', title: 'Minimalist Loft', location: 'New York, NY' },
+    { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&h=900&fit=crop', title: 'Scandinavian Retreat', location: 'Oslo, Norway' },
+    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop', title: 'Urban Penthouse', location: 'London, UK' },
+    { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&h=900&fit=crop', title: 'Mediterranean Estate', location: 'Marbella, Spain' },
+    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&h=900&fit=crop', title: 'Desert Modern', location: 'Palm Springs, CA' },
   ];
 
   const revenueStreams = [
@@ -81,15 +96,18 @@ export default function Home() {
 
   return (
     <div>
-      {/* Full-screen Hero */}
-      <section className="min-h-screen relative flex items-end">
-        <div className="absolute inset-0">
+      {/* Full-screen Hero with parallax */}
+      <section className="min-h-screen relative flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <img 
+            ref={parallaxRef}
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop&q=90" 
             alt="Interior" 
-            className="w-full h-full object-cover"
+            className="w-full h-[120%] object-cover"
+            style={{ marginTop: '-10%' }}
           />
           <div className="absolute inset-0 bg-ink/50" />
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }} />
         </div>
         
         <div className="relative z-10 w-full px-6 md:px-10 pb-16 md:pb-24">
@@ -97,7 +115,6 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-end">
               <div className="animate-fade-in-up">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-paper/60 mb-6">AI-Powered Design Platform</p>
-                
                 <h1 className="font-serif text-paper leading-[1.02]">
                   <span className="block text-[clamp(2.5rem,7vw,6rem)]">Houses that</span>
                   <span className="block text-[clamp(2.5rem,7vw,6rem)] mt-1">invite you to</span>
@@ -132,15 +149,15 @@ export default function Home() {
       {/* Introduction */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-20">
-          <div>
+          <Reveal>
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/00 About</span>
             <h2 className="font-serif text-ink leading-[1.05]">
               <span className="block text-[clamp(2rem,4vw,3.5rem)]">Every space</span>
               <span className="block text-[clamp(2rem,4vw,3.5rem)]">should be as</span>
               <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">unique as you</em>
             </h2>
-          </div>
-          <div className="lg:pt-12">
+          </Reveal>
+          <Reveal delay={150} className="lg:pt-12">
             <p className="text-stone text-sm leading-[1.9] mb-6">
               We believe that the future of interior design lies at the intersection of human creativity and artificial intelligence. Our platform unifies AI-powered design, professional visualization, and a curated marketplace into one seamless experience.
             </p>
@@ -151,7 +168,20 @@ export default function Home() {
               Our Story
               <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
             </Link>
-          </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Full-bleed image divider */}
+      <section className="h-[70vh] relative overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&h=1080&fit=crop" 
+          alt="Architecture" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/20" />
+        <div className="absolute bottom-10 left-10">
+          <p className="text-[10px] tracking-[0.2em] uppercase text-white/60">The Details</p>
         </div>
       </section>
 
@@ -169,12 +199,14 @@ export default function Home() {
       {/* Three Platforms */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/01 The Platform</span>
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/01 The Platform</span>
+          </Reveal>
           
           <div className="space-y-36">
             {platforms.map((platform, i) => (
               <div key={i} className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                <Reveal className={i % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="aspect-[4/5] overflow-hidden">
                     <img 
                       src={platform.image} 
@@ -182,8 +214,8 @@ export default function Home() {
                       className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000"
                     />
                   </div>
-                </div>
-                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
+                </Reveal>
+                <Reveal delay={200} className={i % 2 === 1 ? 'lg:order-1' : ''}>
                   <span className="font-serif text-6xl text-line block mb-8">{platform.num}</span>
                   <h3 className="font-serif text-3xl md:text-4xl text-ink mb-6">{platform.title}</h3>
                   <p className="text-stone text-sm leading-[1.9] mb-8 max-w-md">{platform.desc}</p>
@@ -194,8 +226,33 @@ export default function Home() {
                     Discover
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
                   </Link>
-                </div>
+                </Reveal>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mosaic image grid */}
+      <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/02 Interiors</span>
+            <h2 className="font-serif text-ink leading-[1.05] mb-16">
+              <span className="block text-[clamp(2rem,4vw,3rem)]">Light, space,</span>
+              <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">and material</em>
+            </h2>
+          </Reveal>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {mosaicImages.map((item, i) => (
+              <Reveal key={i} delay={i * 100} className={`${item.w} ${item.h} overflow-hidden group`}>
+                <img 
+                  src={item.src} 
+                  alt={`Interior ${i}`} 
+                  className="w-full h-full object-cover group-hover:scale-[1.03] group-hover:brightness-105 transition-all duration-700"
+                />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -204,36 +261,52 @@ export default function Home() {
       {/* Architecture Showcase */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/02 Selected Works</span>
-          <h2 className="font-serif text-ink leading-[1.05] mb-20">
-            <span className="block text-[clamp(2rem,4vw,3.5rem)]">Architecture</span>
-            <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">& Interiors</em>
-          </h2>
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/03 Selected Works</span>
+            <h2 className="font-serif text-ink leading-[1.05] mb-20">
+              <span className="block text-[clamp(2rem,4vw,3rem)]">Architecture</span>
+              <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">& Interiors</em>
+            </h2>
+          </Reveal>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
             {architectureImages.map((item, i) => (
-              <div key={i} className="bg-paper group relative overflow-hidden">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img 
-                    src={item.src} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-1000"
-                  />
+              <Reveal key={i} delay={i * 80}>
+                <div className="bg-paper group relative overflow-hidden">
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img 
+                      src={item.src} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-[1.03] group-hover:brightness-105 transition-all duration-700"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="font-serif text-white text-lg">{item.title}</p>
+                    <p className="text-white/60 text-xs mt-1">{item.location}</p>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="font-serif text-white text-lg">{item.title}</p>
-                  <p className="text-white/60 text-xs mt-1">{item.location}</p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Full-bleed parallax divider 2 */}
+      <section className="h-[60vh] relative overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&h=1080&fit=crop" 
+          alt="Interior detail" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/20" />
+      </section>
+
       {/* Stats */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line bg-ink">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/03 By Numbers</span>
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/04 By Numbers</span>
+          </Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { value: '2,400+', label: 'Spaces Designed' },
@@ -241,10 +314,10 @@ export default function Home() {
               { value: '12', label: 'Countries' },
               { value: '98%', label: 'Satisfaction' },
             ].map((stat, i) => (
-              <div key={i}>
+              <Reveal key={i} delay={i * 100}>
                 <span className="font-serif text-4xl md:text-6xl text-paper block">{stat.value}</span>
                 <span className="text-stone text-xs mt-3 block tracking-wide">{stat.label}</span>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -253,8 +326,9 @@ export default function Home() {
       {/* How It Works */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/04 How It Works</span>
-          
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/05 How It Works</span>
+          </Reveal>
           <div className="grid md:grid-cols-4 gap-12">
             {[
               { num: '/01', title: 'Upload Your Space', desc: 'Snap a photo or upload floor plans. Tell us your vision.' },
@@ -262,11 +336,11 @@ export default function Home() {
               { num: '/03', title: 'Visualize', desc: 'Explore photorealistic 3D renders and immersive walkthroughs.' },
               { num: '/04', title: 'Shop the Room', desc: 'Click any item to purchase from our curated partner brands.' },
             ].map((step, i) => (
-              <div key={i}>
+              <Reveal key={i} delay={i * 100}>
                 <span className="font-serif text-5xl text-line block mb-6">{step.num}</span>
                 <h3 className="font-serif text-lg text-ink mb-3">{step.title}</h3>
                 <p className="text-stone text-sm leading-[1.8]">{step.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -275,19 +349,25 @@ export default function Home() {
       {/* Revenue Model */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/05 Revenue Model</span>
-          <h2 className="font-serif text-ink leading-[1.05] mb-16">
-            <span className="block text-[clamp(2rem,4vw,3rem)]">Multiple income</span>
-            <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">streams</em>
-          </h2>
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-20">/06 Revenue Model</span>
+          </Reveal>
+          <Reveal delay={100}>
+            <h2 className="font-serif text-ink leading-[1.05] mb-16">
+              <span className="block text-[clamp(2rem,4vw,3rem)]">Multiple income</span>
+              <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">streams</em>
+            </h2>
+          </Reveal>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
             {revenueStreams.map((r, i) => (
-              <div key={i} className="bg-paper p-10 hover:bg-paper/80 transition-all">
-                <span className="text-[10px] text-stone block mb-4">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="font-serif text-lg text-ink mb-2">{r.title}</h3>
-                <p className="text-sm text-stone leading-relaxed">{r.desc}</p>
-              </div>
+              <Reveal key={i} delay={i * 80}>
+                <div className="bg-paper p-10 hover:bg-paper/80 transition-all">
+                  <span className="text-[10px] text-stone block mb-4">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="font-serif text-lg text-ink mb-2">{r.title}</h3>
+                  <p className="text-sm text-stone leading-relaxed">{r.desc}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -296,7 +376,9 @@ export default function Home() {
       {/* Partners */}
       <section className="py-24 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/06 Partner Brands</span>
+          <Reveal>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-12 text-center">/07 Partner Brands</span>
+          </Reveal>
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {['Herman Miller', 'Knoll', 'Flos', 'Vitra', 'Carl Hansen', 'Muuto', 'Louis Poulsen', 'B&B Italia'].map((brand, i) => (
               <span key={i} className="font-serif text-stone/40 text-lg hover:text-stone transition-colors cursor-default">{brand}</span>
@@ -308,27 +390,33 @@ export default function Home() {
       {/* CTA */}
       <section className="py-32 md:py-44 px-6 md:px-10 border-t border-line">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-ink leading-[1.05] mb-8">
-            <span className="block text-[clamp(2rem,4vw,3.5rem)]">Ready to transform</span>
-            <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">your space?</em>
-          </h2>
-          <p className="text-stone text-sm leading-[1.8] max-w-md mx-auto mb-12">
-            Join thousands of homeowners, designers, and architects who are already designing, visualizing, and furnishing with Atelier AI.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              to="/design-studio" 
-              className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all"
-            >
-              Start Designing
-            </Link>
-            <Link 
-              to="/marketplace" 
-              className="px-10 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all"
-            >
-              Browse Products
-            </Link>
-          </div>
+          <Reveal>
+            <h2 className="font-serif text-ink leading-[1.05] mb-8">
+              <span className="block text-[clamp(2rem,4vw,3.5rem)]">Ready to transform</span>
+              <em className="block text-[clamp(2rem,4vw,3.5rem)] text-stone mt-1">your space?</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={150}>
+            <p className="text-stone text-sm leading-[1.8] max-w-md mx-auto mb-12">
+              Join thousands of homeowners, designers, and architects who are already designing, visualizing, and furnishing with Atelier AI.
+            </p>
+          </Reveal>
+          <Reveal delay={250}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                to="/design-studio" 
+                className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all"
+              >
+                Start Designing
+              </Link>
+              <Link 
+                to="/marketplace" 
+                className="px-10 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all"
+              >
+                Browse Products
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
