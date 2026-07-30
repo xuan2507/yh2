@@ -23,6 +23,7 @@ export default function DesignStudio() {
     { title: 'AI Mood Boards', desc: 'Curated color palettes and material selections' },
     { title: 'Optimized Layouts', desc: 'Furniture placement for flow and function' },
     { title: '3D Renders', desc: 'Photorealistic visualizations of your final design' },
+    { title: '3D Walkthroughs', desc: 'Immersive room tours with navigable scenes and shoppable hotspots' },
     { title: 'Shopping Lists', desc: 'Every product linked to our marketplace with pricing' },
   ];
 
@@ -194,14 +195,17 @@ export default function DesignStudio() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/marketplace" className="px-8 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center justify-center gap-2">
-                      Shop the Room
+                    <Link to="/walkthrough" className="px-8 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center justify-center gap-2">
+                      View 3D Walkthrough
                       <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                     </Link>
-                    <button onClick={() => { setStep(1); setUploaded(false); setComplete(false); }} className="px-8 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all">
-                      Start New Design
-                    </button>
+                    <Link to="/marketplace" className="px-8 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center justify-center gap-2">
+                      Shop the Room
+                    </Link>
                   </div>
+                  <button onClick={() => { setStep(1); setUploaded(false); setComplete(false); }} className="text-stone text-[11px] tracking-[0.12em] uppercase hover:text-ink transition-colors mt-4">
+                    Start New Design
+                  </button>
                 </div>
               )}
             </div>

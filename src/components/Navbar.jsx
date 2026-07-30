@@ -17,6 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Design Studio', href: '/design-studio' },
+    { name: 'Walkthroughs', href: '/walkthrough' },
     { name: 'Visualization', href: '/visualization' },
     { name: 'Marketplace', href: '/marketplace' },
     { name: 'Experts', href: '/professionals' },

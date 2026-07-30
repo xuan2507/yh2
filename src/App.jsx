@@ -14,6 +14,7 @@ import Professionals from './pages/Professionals';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Partners from './pages/Partners';
+import Walkthrough from './pages/Walkthrough';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/walkthrough" element={<Walkthrough />} />
           </Routes>
         </main>
         <Footer />
