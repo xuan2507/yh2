@@ -25,8 +25,8 @@ export default function Footer() {
             <span className="text-[10px] tracking-[0.2em] uppercase text-stone block mb-4">Company</span>
             <div className="space-y-2">
               <Link to="/about" className="block text-sm text-stone hover:text-ink transition-colors">About</Link>
-              <a href="#" className="block text-sm text-stone hover:text-ink transition-colors">Partners</a>
-              <a href="#" className="block text-sm text-stone hover:text-ink transition-colors">Careers</a>
+              <Link to="/partners" className="block text-sm text-stone hover:text-ink transition-colors">Partners</Link>
+              <Link to="/professionals" className="block text-sm text-stone hover:text-ink transition-colors">Experts</Link>
             </div>
           </div>
           
@@ -43,8 +43,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-line flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-[11px] text-stone">2025 xuantelier</span>
           <div className="flex items-center gap-6 text-[11px] text-stone">
-            <a href="#" className="hover:text-ink transition-colors">Privacy</a>
-            <a href="#" className="hover:text-ink transition-colors">Terms</a>
+            <Link to="/privacy" className="hover:text-ink transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-ink transition-colors">Terms</Link>
           </div>
         </div>
       </div>

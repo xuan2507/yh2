@@ -235,25 +235,25 @@ export default function DesignStudio() {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2 h-[500px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&h=800&fit=crop" alt="Before and after living room" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&h=800&fit=crop" alt="AI-generated living room design concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[500px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=600&h=800&fit=crop" alt="Scandinavian bedroom design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=600&h=800&fit=crop" alt="Scandinavian-inspired bedroom design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[400px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=500&fit=crop" alt="Modern kitchen concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=500&fit=crop" alt="Modern kitchen design visualization" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="lg:col-span-2 h-[400px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=600&fit=crop" alt="Minimalist dining space" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=600&fit=crop" alt="Minimalist dining room concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[450px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=700&fit=crop" alt="Japandi interior concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=700&fit=crop" alt="Japandi-style interior design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[450px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&h=700&fit=crop" alt="Industrial loft design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&h=700&fit=crop" alt="Industrial loft interior concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="lg:col-span-1 h-[450px] overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1521192586723-1ef0e384dd32?w=600&h=700&fit=crop" alt="Reading nook concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1521192586723-1ef0e384dd32?w=600&h=700&fit=crop" alt="Cozy reading nook design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
           </div>
         </div>

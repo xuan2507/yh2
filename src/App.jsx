@@ -11,6 +11,9 @@ import Marketplace from './pages/Marketplace';
 import About from './pages/About';
 import Payment from './pages/Payment';
 import Professionals from './pages/Professionals';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Partners from './pages/Partners';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/professionals" element={<Professionals />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/partners" element={<Partners />} />
           </Routes>
         </main>
         <Footer />

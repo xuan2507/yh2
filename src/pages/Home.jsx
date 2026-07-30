@@ -77,12 +77,12 @@ export default function Home() {
   ];
 
   const architectureImages = [
-    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop', title: 'Coastal Modern Villa', location: 'Malibu, California' },
-    { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&h=900&fit=crop', title: 'Minimalist Loft', location: 'New York, NY' },
-    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop', title: 'Scandinavian Retreat', location: 'Oslo, Norway' },
-    { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&h=900&fit=crop', title: 'Urban Penthouse', location: 'London, UK' },
-    { src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&h=900&fit=crop', title: 'Mediterranean Estate', location: 'Marbella, Spain' },
-    { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=700&h=900&fit=crop', title: 'Desert Modern', location: 'Palm Springs, CA' },
+    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop', title: 'Modern Residential Interior', location: 'Private Residence' },
+    { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&h=900&fit=crop', title: 'Contemporary Living Space', location: 'Urban Apartment' },
+    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop', title: 'Scandinavian-Inspired Home', location: 'Nordic Residence' },
+    { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&h=900&fit=crop', title: 'Light-Filled Interior', location: 'City Residence' },
+    { src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&h=900&fit=crop', title: 'Warm Tonal Bedroom', location: 'Private Villa' },
+    { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=700&h=900&fit=crop', title: 'Minimalist Reading Nook', location: 'Studio Apartment' },
   ];
 
   const revenueStreams = [

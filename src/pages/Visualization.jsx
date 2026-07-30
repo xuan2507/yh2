@@ -53,7 +53,7 @@ export default function Visualization() {
             <div className="absolute top-5 left-5 text-[10px] tracking-[0.2em] uppercase text-stone">Before</div>
           </div>
           <div className="aspect-[4/3] relative overflow-hidden">
-            <img src="https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg?auto=compress&cs=tinysrgb&w=1000&h=750&fit=crop" alt="Render" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000&h=750&fit=crop" alt="Render" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
             <div className="absolute top-5 left-5 text-[10px] tracking-[0.2em] uppercase text-paper bg-ink px-2 py-1">After</div>
             <div className="absolute bottom-8 left-8 right-8">
@@ -126,20 +126,22 @@ export default function Visualization() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
             {[
-              { src: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Coastal Villa Render', type: 'Exterior' },
-              { src: 'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Minimalist Loft', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Scandinavian Retreat', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/221024/pexels-photo-221024.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Urban Penthouse', type: 'Interior' },
-              { src: 'https://images.pexels.com/photos/261388/pexels-photo-261388.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Mediterranean Estate', type: 'Exterior' },
-              { src: 'https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop', title: 'Desert Modern', type: 'Exterior' },
+              { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', title: 'Malibu Coastal Residence', type: 'Exterior', client: 'Private Client', year: '2024', area: '4,200 sq ft', desc: 'Full CGI visualization of a cliffside home featuring cantilevered terraces, floor-to-ceiling glazing, and integrated poolscape.' },
+              { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', title: 'Tribeca Loft Conversion', type: 'Interior', client: 'Architects Collective', year: '2024', area: '2,800 sq ft', desc: 'Photorealistic interior renders for a converted warehouse loft, showcasing exposed brick, steel trusses, and bespoke joinery.' },
+              { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop', title: 'Oslo Fjord House', type: 'Interior', client: 'Nordic Living', year: '2023', area: '3,100 sq ft', desc: '360° panoramic renders and virtual walkthrough of a timber-clad family home with panoramic fjord views.' },
+              { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=600&fit=crop', title: 'Shoreditch Penthouse', type: 'Interior', client: ' developers', year: '2024', area: '1,900 sq ft', desc: 'Marketing visualization package for a luxury penthouse development, including day/night scenes and lifestyle imagery.' },
+              { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop', title: 'Marbella Hillside Villa', type: 'Exterior', client: 'Costa Developments', year: '2023', area: '6,500 sq ft', desc: 'Exterior renders and landscape visualization for a Mediterranean modern villa with infinity pool and terraced gardens.' },
+              { src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop', title: 'Palm Springs Retreat', type: 'Exterior', client: 'Desert Modern Group', year: '2024', area: '3,400 sq ft', desc: 'Desert modern home visualization featuring rammed earth walls, courtyard pools, and indoor-outdoor living spaces.' },
             ].map((item, i) => (
               <div key={i} className="bg-paper group relative overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-paper/70">{item.type}</span>
+                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-ink/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-paper/70">{item.type} — {item.year}</span>
                   <p className="font-serif text-white text-lg">{item.title}</p>
+                  <p className="text-white/60 text-xs mt-1">{item.client} · {item.area}</p>
+                  <p className="text-white/50 text-xs mt-2 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
