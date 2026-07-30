@@ -9,12 +9,12 @@ export default function DesignStudio() {
   const [complete, setComplete] = useState(false);
 
   const styles = [
-    { name: 'Scandinavian', img: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
-    { name: 'Mid-Century', img: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
-    { name: 'Modern Minimal', img: 'https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
-    { name: 'Industrial', img: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
-    { name: 'Bohemian', img: 'https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
-    { name: 'Japandi', img: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop' },
+    { name: 'Scandinavian', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=300&h=300&fit=crop' },
+    { name: 'Mid-Century', img: 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=300&h=300&fit=crop' },
+    { name: 'Modern Minimal', img: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=300&h=300&fit=crop' },
+    { name: 'Industrial', img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=300&fit=crop' },
+    { name: 'Bohemian', img: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=300&h=300&fit=crop' },
+    { name: 'Japandi', img: 'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=300&h=300&fit=crop' },
   ];
 
   const budgets = ['Under $2,000', '$2,000 - $5,000', '$5,000 - $10,000', '$10,000 - $25,000', '$25,000+'];
@@ -72,7 +72,7 @@ export default function DesignStudio() {
         <div className="max-w-[1400px] mx-auto">
           <div className="aspect-[21/9] overflow-hidden">
             <img 
-              src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=1600&h=700&fit=crop" 
+              src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1600&h=700&fit=crop" 
               alt="Interior Design" 
               className="w-full h-full object-cover"
             />
@@ -235,25 +235,25 @@ export default function DesignStudio() {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2 h-[500px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Before and after living room" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&h=800&fit=crop" alt="Before and after living room" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[500px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Scandinavian bedroom design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=600&h=800&fit=crop" alt="Scandinavian bedroom design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[400px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="Modern kitchen concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=500&fit=crop" alt="Modern kitchen concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="lg:col-span-2 h-[400px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="Minimalist dining space" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=600&fit=crop" alt="Minimalist dining space" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[450px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop" alt="Japandi interior concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=700&fit=crop" alt="Japandi interior concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="h-[450px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop" alt="Industrial loft design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&h=700&fit=crop" alt="Industrial loft design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
             <div className="lg:col-span-1 h-[450px] overflow-hidden group">
-              <img src="https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop" alt="Reading nook concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1521192586723-1ef0e384dd32?w=600&h=700&fit=crop" alt="Reading nook concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
             </div>
           </div>
         </div>

@@ -38,51 +38,51 @@ export default function Home() {
       title: 'AI Design Studio',
       desc: 'Upload a photo of your space. Set your preferences. Receive multiple professionally designed concepts with 3D renders, layouts, and a complete shopping list — in minutes, not weeks.',
       link: '/design-studio',
-      image: 'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&fit=crop',
+      image: 'https://images.unsplash.com/photo-1592315862863-f5f4ff421b3b?w=900&h=1100&fit=crop',
     },
     {
       num: '/02',
       title: 'Visualization',
       desc: 'Photorealistic exterior and interior renders, 360° panoramas, and cinematic virtual walkthroughs for architects, developers, and real estate professionals.',
       link: '/visualization',
-      image: 'https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&fit=crop',
+      image: 'https://images.unsplash.com/photo-1614961234425-dedd96e5e699?w=900&h=1100&fit=crop',
     },
     {
       num: '/03',
       title: 'Marketplace',
       desc: 'Every item in your AI-generated design is clickable and shoppable. Partnered with the world\'s finest furniture brands. Your complete room, delivered to your door.',
       link: '/marketplace',
-      image: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&fit=crop',
+      image: 'https://images.unsplash.com/photo-1513584684374-8ab4dc5e39f2?w=900&h=1100&fit=crop',
     },
   ];
 
   const galleryImages = [
-    'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/221024/pexels-photo-221024.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/261388/pexels-photo-261388.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/2507010/pexels-photo-2507010.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
-    'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?auto=compress&cs=tinysrgb&w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1494526585095-c41746248156?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600210491898-03076e8ec95c?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&h=650&fit=crop',
+    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&h=650&fit=crop',
   ];
 
   const mosaicImages = [
-    { src: 'https://images.pexels.com/photos/1668870/pexels-photo-1668870.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop', w: 'lg:col-span-2', h: 'h-[500px]' },
-    { src: 'https://images.pexels.com/photos/1668871/pexels-photo-1668871.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[500px]' },
-    { src: 'https://images.pexels.com/photos/1668873/pexels-photo-1668873.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[400px]' },
-    { src: 'https://images.pexels.com/photos/1668874/pexels-photo-1668874.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop', w: 'lg:col-span-2', h: 'h-[400px]' },
-    { src: 'https://images.pexels.com/photos/1668876/pexels-photo-1668876.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
-    { src: 'https://images.pexels.com/photos/1668878/pexels-photo-1668878.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
+    { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=800&fit=crop', w: 'lg:col-span-2', h: 'h-[500px]' },
+    { src: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[500px]' },
+    { src: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[400px]' },
+    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=500&fit=crop', w: 'lg:col-span-2', h: 'h-[400px]' },
+    { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
+    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=500&fit=crop', w: 'lg:col-span-1', h: 'h-[450px]' },
   ];
 
   const architectureImages = [
-    { src: 'https://images.pexels.com/photos/1668880/pexels-photo-1668880.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Coastal Modern Villa', location: 'Malibu, California' },
-    { src: 'https://images.pexels.com/photos/1668882/pexels-photo-1668882.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Minimalist Loft', location: 'New York, NY' },
-    { src: 'https://images.pexels.com/photos/1668884/pexels-photo-1668884.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Scandinavian Retreat', location: 'Oslo, Norway' },
-    { src: 'https://images.pexels.com/photos/1668886/pexels-photo-1668886.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Urban Penthouse', location: 'London, UK' },
-    { src: 'https://images.pexels.com/photos/1668888/pexels-photo-1668888.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Mediterranean Estate', location: 'Marbella, Spain' },
-    { src: 'https://images.pexels.com/photos/1668890/pexels-photo-1668890.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop', title: 'Desert Modern', location: 'Palm Springs, CA' },
+    { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=700&h=900&fit=crop', title: 'Coastal Modern Villa', location: 'Malibu, California' },
+    { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&h=900&fit=crop', title: 'Minimalist Loft', location: 'New York, NY' },
+    { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=900&fit=crop', title: 'Scandinavian Retreat', location: 'Oslo, Norway' },
+    { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&h=900&fit=crop', title: 'Urban Penthouse', location: 'London, UK' },
+    { src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&h=900&fit=crop', title: 'Mediterranean Estate', location: 'Marbella, Spain' },
+    { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=700&h=900&fit=crop', title: 'Desert Modern', location: 'Palm Springs, CA' },
   ];
 
   const revenueStreams = [
@@ -101,7 +101,7 @@ export default function Home() {
         <div className="absolute inset-0 overflow-hidden">
           <img 
             ref={parallaxRef}
-            src="https://images.pexels.com/photos/1668892/pexels-photo-1668892.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&q=90" 
+            src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1920&h=1080&fit=crop&q=90" 
             alt="Interior" 
             className="w-full h-[120%] object-cover"
             style={{ marginTop: '-10%' }}
@@ -175,7 +175,7 @@ export default function Home() {
       {/* Full-bleed image divider */}
       <section className="h-[70vh] relative overflow-hidden">
         <img 
-          src="https://images.pexels.com/photos/1643380/pexels-photo-1643380.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
           alt="Architecture" 
           className="w-full h-full object-cover"
         />
@@ -294,7 +294,7 @@ export default function Home() {
       {/* Full-bleed parallax divider 2 */}
       <section className="h-[60vh] relative overflow-hidden">
         <img 
-          src="https://images.pexels.com/photos/1571450/pexels-photo-1571450.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
           alt="Interior detail" 
           className="w-full h-full object-cover"
         />
