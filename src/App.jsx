@@ -10,6 +10,7 @@ import Visualization from './pages/Visualization';
 import Marketplace from './pages/Marketplace';
 import About from './pages/About';
 import Payment from './pages/Payment';
+import Professionals from './pages/Professionals';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/about" element={<About />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/professionals" element={<Professionals />} />
           </Routes>
         </main>
         <Footer />

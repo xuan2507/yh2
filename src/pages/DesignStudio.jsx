@@ -225,11 +225,45 @@ export default function DesignStudio() {
         </div>
       </section>
 
+      {/* Example Gallery */}
+      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/05 Design Gallery</span>
+          <h2 className="font-serif text-ink leading-[1.05] mb-16">
+            <span className="block text-[clamp(2rem,4vw,3rem)]">Real spaces,</span>
+            <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">reimagined</em>
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="lg:col-span-2 h-[500px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop" alt="Before and after living room" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="h-[500px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=800&fit=crop" alt="Scandinavian bedroom design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="h-[400px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&h=500&fit=crop" alt="Modern kitchen concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="lg:col-span-2 h-[400px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600210491898-03076e8ec95c?w=1200&h=600&fit=crop" alt="Minimalist dining space" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="h-[450px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=700&fit=crop" alt="Japandi interior concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="h-[450px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=700&fit=crop" alt="Industrial loft design" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+            <div className="lg:col-span-1 h-[450px] overflow-hidden group">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=700&fit=crop" alt="Reading nook concept" className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Target Customers */}
       <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/05 Who We Serve</span>
-          
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/06 Who We Serve</span>
+
           <div className="grid md:grid-cols-5 gap-8">
             {customers.map((c, i) => (
               <div key={i} className="border-t border-line pt-6">

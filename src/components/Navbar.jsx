@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: 'Design Studio', href: '/design-studio' },
     { name: 'Visualization', href: '/visualization' },
     { name: 'Marketplace', href: '/marketplace' },
+    { name: 'Experts', href: '/professionals' },
     { name: 'About', href: '/about' },
   ];
 

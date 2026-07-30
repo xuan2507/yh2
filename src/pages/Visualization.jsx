@@ -116,10 +116,41 @@ export default function Visualization() {
         </div>
       </section>
 
+      {/* Portfolio Gallery */}
+      <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line">
+        <div className="max-w-[1400px] mx-auto">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-8">/08 Portfolio</span>
+          <h2 className="font-serif text-ink leading-[1.05] mb-16">
+            <span className="block text-[clamp(2rem,4vw,3rem)]">Rendered to</span>
+            <em className="block text-[clamp(2rem,4vw,3rem)] text-stone mt-1">perfection</em>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+            {[
+              { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop', title: 'Coastal Villa Render', type: 'Exterior' },
+              { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', title: 'Minimalist Loft', type: 'Interior' },
+              { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop', title: 'Scandinavian Retreat', type: 'Interior' },
+              { src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop', title: 'Urban Penthouse', type: 'Interior' },
+              { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop', title: 'Mediterranean Estate', type: 'Exterior' },
+              { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', title: 'Desert Modern', type: 'Exterior' },
+            ].map((item, i) => (
+              <div key={i} className="bg-paper group relative overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-paper/70">{item.type}</span>
+                  <p className="font-serif text-white text-lg">{item.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Clients */}
       <section className="py-32 md:py-40 px-6 md:px-10 border-t border-line bg-ink">
         <div className="max-w-[1400px] mx-auto">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/08 Trusted By</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone block mb-16">/09 Trusted By</span>
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-px bg-stone/20">
             {['Architects', 'Developers', 'Real Estate', 'Construction', 'Interior Designers', 'Landscape Architects'].map((c, i) => (
               <div key={i} className="bg-ink p-8 text-center">
