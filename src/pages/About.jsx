@@ -27,7 +27,7 @@ export default function About() {
         <div className="max-w-[1400px] mx-auto">
           <div className="aspect-[21/9] overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=700&fit=crop" 
+              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600&h=700&fit=crop" 
               alt="xuantelier Studio" 
               className="w-full h-full object-cover"
             />

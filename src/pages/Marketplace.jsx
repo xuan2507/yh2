@@ -293,7 +293,7 @@ export default function Marketplace() {
         <div className="max-w-[1400px] mx-auto">
           <div className="aspect-[21/9] overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&h=700&fit=crop"
+              src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=1600&h=700&fit=crop"
               alt="Marketplace"
               className="w-full h-full object-cover"
             />

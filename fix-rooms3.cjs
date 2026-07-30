@@ -1,0 +1,31 @@
+const fs = require('fs');
+
+const allIds = [
+  '1643380','1571450','1571470','1648760','1648780','1648790',
+  '1648810','1648850','1648860','1648870','1648880','1648890',
+  '1648900','1648920','1648950','1648960','1648970','1648980',
+  '1649020','1649110','1649120','1649140','1649170','1649180',
+  '1649190','1649200','1649220','1649230','1649240','1649270',
+  '1649290','1649300','1649320','1649350','1649360','1649380',
+  '1649390','1649400'
+];
+
+let content = fs.readFileSync('src/data/products.js', 'utf8');
+const regex = /https:\/\/images\.pexels\.com\/photos\/\d+\/pexels-photo-\d+\.jpeg[^\s"'<>]*/g;
+
+let idx = 0;
+content = content.replace(regex, (match) => {
+  const id = allIds[idx % allIds.length];
+  idx++;
+  const base = `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=`;
+  const wMatch = match.match(/[?&]w=(\d+)/);
+  const hMatch = match.match(/[?&]h=(\d+)/);
+  const fitMatch = match.match(/[?&]fit=([^&]+)/);
+  let replacement = base + (wMatch ? wMatch[1] : '800');
+  if (hMatch) replacement += '&h=' + hMatch[1];
+  if (fitMatch) replacement += '&fit=' + fitMatch[1];
+  return replacement;
+});
+
+fs.writeFileSync('src/data/products.js', content);
+console.log('Replaced', idx, 'room image occurrences with unique IDs');
