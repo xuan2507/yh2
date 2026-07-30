@@ -428,10 +428,10 @@ export default function Professionals() {
           <p className="text-stone text-sm leading-[1.8] max-w-md mx-auto mb-12">
             Join our curated network and connect with homeowners who are actively looking for your expertise. We verify every professional to maintain the highest standards.
           </p>
-          <button className="px-10 py-4 bg-paper hover:bg-paper/90 text-ink text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
+          <Link to="/about" className="px-10 py-4 bg-paper hover:bg-paper/90 text-ink text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
             Apply to Join
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
-          </button>
+          </Link>
         </div>
       </section>
 

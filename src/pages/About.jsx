@@ -1,5 +1,60 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone, ArrowUpRight, Check } from 'lucide-react';
+
+function ContactForm() {
+  const [sent, setSent] = useState(false);
+
+  if (sent) {
+    return (
+      <div className="border border-line p-10 md:p-12 text-center">
+        <div className="w-12 h-12 border border-line flex items-center justify-center mx-auto mb-6">
+          <Check className="w-5 h-5 text-stone" strokeWidth={1.5} />
+        </div>
+        <h3 className="font-serif text-xl text-ink mb-2">Message Sent</h3>
+        <p className="text-sm text-stone mb-6">Thank you for reaching out. We'll respond within 24 hours.</p>
+        <button
+          onClick={() => setSent(false)}
+          className="text-[11px] tracking-[0.12em] uppercase text-stone hover:text-ink transition-colors"
+        >
+          Send Another
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form className="space-y-6 border border-line p-10 md:p-12" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Name</label>
+          <input required type="text" className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink" placeholder="Your name" />
+        </div>
+        <div>
+          <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Email</label>
+          <input required type="email" className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink" placeholder="your@email.com" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Inquiry Type</label>
+        <select className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink appearance-none">
+          <option>Interior Design Project</option>
+          <option>Visualization Services</option>
+          <option>Brand Partnership</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Message</label>
+        <textarea required rows={5} className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink resize-none" placeholder="Tell us about your project..." />
+      </div>
+      <button type="submit" className="w-full py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all flex items-center justify-center gap-3 group">
+        Send Message
+        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
+      </button>
+    </form>
+  );
+}
 
 export default function About() {
   return (
@@ -143,37 +198,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="border border-line p-10 md:p-12">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Name</label>
-                    <input type="text" className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Email</label>
-                    <input type="email" className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink" placeholder="your@email.com" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Inquiry Type</label>
-                  <select className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink appearance-none">
-                    <option>Interior Design Project</option>
-                    <option>Visualization Services</option>
-                    <option>Brand Partnership</option>
-                    <option>General Inquiry</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-[10px] tracking-[0.2em] uppercase text-stone mb-3">Message</label>
-                  <textarea rows={5} className="w-full px-4 py-3.5 bg-transparent border border-line focus:border-stone focus:outline-none transition-colors text-ink resize-none" placeholder="Tell us about your project..." />
-                </div>
-                <button type="submit" className="w-full py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all flex items-center justify-center gap-3 group">
-                  Send Message
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>

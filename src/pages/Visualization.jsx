@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Camera, Box, TreePine, Building2, RotateCcw, Video, Sun, Moon, Check, ArrowUpRight } from 'lucide-react';
 
 export default function Visualization() {
@@ -178,10 +179,10 @@ export default function Visualization() {
           <p className="text-stone text-sm leading-[1.8] max-w-md mx-auto mb-12">
             Get a free quote for your visualization project. Upload your plans and receive a detailed proposal within hours.
           </p>
-          <button className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
+          <Link to="/about" className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
             Request a Quote
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
-          </button>
+          </Link>
         </div>
       </section>
     </div>

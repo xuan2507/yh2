@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowDown, ArrowUpRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -14,6 +14,68 @@ function Reveal({ children, className = '', delay = 0 }) {
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
+    </div>
+  );
+}
+
+function IntroOverlay() {
+  const [visible, setVisible] = useState(true);
+  const [phase, setPhase] = useState(0); // 0 = enter, 1 = hold, 2 = exit
+
+  useEffect(() => {
+    const seen = sessionStorage.getItem('xuantelier-intro');
+    if (seen) {
+      setVisible(false);
+      return;
+    }
+
+    const t1 = setTimeout(() => setPhase(1), 800);
+    const t2 = setTimeout(() => setPhase(2), 2200);
+    const t3 = setTimeout(() => {
+      setVisible(false);
+      sessionStorage.setItem('xuantelier-intro', '1');
+    }, 3200);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      className={`fixed inset-0 z-[100] bg-ink flex items-center justify-center transition-opacity duration-1000 ${
+        phase === 2 ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      }`}
+    >
+      <div className="text-center">
+        <h1
+          className={`font-serif text-paper transition-all duration-1000 ease-out ${
+            phase === 0 ? 'text-[clamp(1rem,3vw,2rem)] tracking-[0.8em] opacity-0 translate-y-4' : ''
+          } ${
+            phase === 1 ? 'text-[clamp(2.5rem,8vw,7rem)] tracking-[0.15em] opacity-100 translate-y-0' : ''
+          } ${
+            phase === 2 ? 'text-[clamp(2.5rem,8vw,7rem)] tracking-[0.15em] opacity-0 -translate-y-4' : ''
+          }`}
+        >
+          xuantelier
+        </h1>
+        <div
+          className={`h-px bg-paper/30 mx-auto mt-6 transition-all duration-1000 delay-300 ${
+            phase === 0 ? 'w-0 opacity-0' : ''
+          } ${phase === 1 ? 'w-24 opacity-100' : ''} ${phase === 2 ? 'w-24 opacity-0' : ''}`}
+        />
+        <p
+          className={`text-paper/50 text-[10px] tracking-[0.4em] uppercase mt-6 transition-all duration-700 delay-500 ${
+            phase === 0 ? 'opacity-0 translate-y-2' : ''
+          } ${phase === 1 ? 'opacity-100 translate-y-0' : ''} ${phase === 2 ? 'opacity-0 -translate-y-2' : ''}`}
+        >
+          AI Design & Visualization
+        </p>
+      </div>
     </div>
   );
 }
@@ -131,6 +193,8 @@ export default function Home() {
 
   return (
     <div>
+      <IntroOverlay />
+
       {/* Full-screen Hero with parallax */}
       <section className="min-h-screen relative flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

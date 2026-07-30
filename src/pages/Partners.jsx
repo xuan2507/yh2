@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Check, Globe, Truck, Shield, Star } from 'lucide-react';
+import { ArrowUpRight, Check, Globe, Truck, Shield, Star, Mail } from 'lucide-react';
 
 const partnerBrands = [
   {
@@ -277,10 +277,10 @@ export default function Partners() {
               </div>
             ))}
           </div>
-          <button className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
+          <Link to="/about" className="px-10 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all inline-flex items-center gap-3 group">
             Apply as Partner
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
-          </button>
+          </Link>
         </div>
       </section>
     </div>
