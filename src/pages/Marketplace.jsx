@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Search, ShoppingBag, Star, ArrowRight, Sparkles, Heart, ChevronDown, ArrowUpRight, X, ChevronLeft, ChevronRight, Check, Truck, Shield, RotateCcw } from 'lucide-react';
 import { products, partnerBrands, roomDesigns } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -247,6 +247,7 @@ function RoomModal({ room, onClose }) {
 }
 
 export default function Marketplace() {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStyle, setSelectedStyle] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -254,6 +255,15 @@ export default function Marketplace() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedRoom, setSelectedRoom] = useState(null);
   const { addItem } = useCart();
+
+  // Auto-open product from URL query param
+  useEffect(() => {
+    const productId = searchParams.get('product');
+    if (productId) {
+      const product = products.find((p) => p.id === productId);
+      if (product) setSelectedProduct(product);
+    }
+  }, [searchParams]);
 
   const categories = ['All', 'Seating', 'Tables', 'Lighting', 'Storage', 'Rugs', 'Decor', 'Bedroom'];
   const styles = ['All', 'Scandinavian', 'Mid-Century Modern', 'Modern', 'Contemporary'];
