@@ -16,6 +16,7 @@ import TermsOfService from './pages/TermsOfService';
 import Partners from './pages/Partners';
 import Walkthrough from './pages/Walkthrough';
 import Projects from './pages/Projects';
+import ProfessionalProfile from './pages/ProfessionalProfile';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/partners" element={<Partners />} />
             <Route path="/walkthrough" element={<Walkthrough />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/professional/:id" element={<ProfessionalProfile />} />
           </Routes>
         </main>
         <Footer />

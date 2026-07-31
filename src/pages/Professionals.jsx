@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Star, MapPin, Phone, Mail, Check, Building2, Home, Trees, Hammer, Paintbrush, Ruler, Lightbulb, HardHat, ClipboardList, Waves, Wrench } from 'lucide-react';
+import { ArrowUpRight, Star, MapPin, Mail, Check, Building2, Home, Trees, Hammer, Paintbrush, Ruler, Lightbulb } from 'lucide-react';
 
 const professionalCategories = [
   { id: 'all', label: 'All Experts', icon: null },
@@ -257,7 +257,6 @@ const howItWorks = [
 
 export default function Professionals() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedPro, setSelectedPro] = useState(null);
 
   const filtered = activeCategory === 'all'
     ? professionals
@@ -391,12 +390,12 @@ export default function Professionals() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
-                    <button
-                      onClick={() => setSelectedPro(pro)}
-                      className="py-2.5 border border-line hover:border-ink text-ink text-[10px] tracking-[0.1em] uppercase transition-all"
+                    <Link
+                      to={`/professional/${pro.id}`}
+                      className="py-2.5 border border-line hover:border-ink text-ink text-[10px] tracking-[0.1em] uppercase transition-all text-center"
                     >
-                      View Profile
-                    </button>
+                      View Portfolio
+                    </Link>
                     <a
                       href={`mailto:${pro.email}`}
                       className="py-2.5 bg-ink hover:bg-stone text-paper text-[10px] tracking-[0.1em] uppercase transition-all text-center flex items-center justify-center gap-1"
@@ -435,91 +434,7 @@ export default function Professionals() {
         </div>
       </section>
 
-      {/* Professional Detail Modal */}
-      {selectedPro && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
-          <div className="absolute inset-0 bg-ink/30 backdrop-blur-sm" onClick={() => setSelectedPro(null)} />
-          <div className="relative bg-paper w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-line">
-            <button
-              onClick={() => setSelectedPro(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-paper border border-line flex items-center justify-center text-stone hover:text-ink transition-colors"
-            >
-              ×
-            </button>
 
-            <div className="aspect-[16/9] relative overflow-hidden">
-              <img src={selectedPro.image} alt={selectedPro.name} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="flex items-center gap-2 mb-2">
-                  {selectedPro.verified && (
-                    <span className="text-[9px] tracking-[0.1em] uppercase text-paper bg-ink/70 px-2 py-1 flex items-center gap-1">
-                      <Check className="w-3 h-3" strokeWidth={1.5} /> Verified
-                    </span>
-                  )}
-                </div>
-                <h2 className="font-serif text-2xl text-white">{selectedPro.name}</h2>
-                <p className="text-white/70 text-sm">{selectedPro.title} — {selectedPro.company}</p>
-              </div>
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="flex items-center gap-6 mb-8 pb-8 border-b border-line">
-                <div className="text-center">
-                  <span className="font-serif text-2xl text-ink block">{selectedPro.rating}</span>
-                  <span className="text-[10px] text-stone">Rating</span>
-                </div>
-                <div className="text-center">
-                  <span className="font-serif text-2xl text-ink block">{selectedPro.projects}</span>
-                  <span className="text-[10px] text-stone">Projects</span>
-                </div>
-                <div className="text-center">
-                  <span className="font-serif text-2xl text-ink block">{selectedPro.experience}</span>
-                  <span className="text-[10px] text-stone">Experience</span>
-                </div>
-                <div className="text-center">
-                  <span className="font-serif text-2xl text-ink block">{selectedPro.reviews}</span>
-                  <span className="text-[10px] text-stone">Reviews</span>
-                </div>
-              </div>
-
-              <p className="text-sm text-stone leading-[1.9] mb-8">{selectedPro.description}</p>
-
-              <div className="mb-8">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-stone block mb-3">Specialties</span>
-                <div className="flex flex-wrap gap-2">
-                  {selectedPro.specialties.map((s) => (
-                    <span key={s} className="px-3 py-1.5 border border-line text-[11px] text-stone">{s}</span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-stone block mb-3">Location</span>
-                <div className="flex items-center gap-2 text-sm text-ink">
-                  <MapPin className="w-4 h-4 text-stone" strokeWidth={1.5} />
-                  {selectedPro.location}
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <a
-                  href={`mailto:${selectedPro.email}`}
-                  className="flex-1 py-4 bg-ink hover:bg-stone text-paper text-[11px] tracking-[0.12em] uppercase transition-all text-center flex items-center justify-center gap-2"
-                >
-                  <Mail className="w-3.5 h-3.5" strokeWidth={1.5} /> Send Email
-                </a>
-                <a
-                  href={`tel:${selectedPro.phone}`}
-                  className="flex-1 py-4 border border-line hover:border-ink text-ink text-[11px] tracking-[0.12em] uppercase transition-all text-center flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-3.5 h-3.5" strokeWidth={1.5} /> Call
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
